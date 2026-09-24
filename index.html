@@ -1,1 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Yana Charyl | SEO & Content Specialist</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --butter-yellow: #FFE497;
+            --mercury: #BEC7B9;
+            --mellow-rose: #D5A4A3;
+            --almost-apricot: #EEB1A2;
+            --jaffa-orange: #D16D3B;
+            --text: #3B332D;
+            --white: #FFFDF8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        nav,
+        .button,
+        .badge,
+        .tool-name,
+        .step-number {
+            font-family: 'Baloo 2', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.1;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 253, 248, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(59, 51, 45, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-family: 'Baloo 2', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--jaffa-orange);
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--jaffa-orange);
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 24px;
+            scroll-margin-top: 80px;
+        }
+
+        .section-heading {
+            margin-bottom: 50px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            margin-bottom: 14px;
+        }
+
+        .section-heading p {
+            max-width: 650px;
+            font-size: 1.05rem;
+        }
+
+        .accent {
+            color: var(--jaffa-orange);
+        }
+
+        /* =========================
+           HOME
+        ========================= */
+
+        #home {
+            min-height: 88vh;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 60px;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            position: relative;
+        }
+
+        .home-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--butter-yellow);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .home-content h1 {
+            font-size: clamp(4rem, 8vw, 7rem);
+            margin-bottom: 25px;
+        }
+
+        .home-content p {
+            font-size: 1.25rem;
+            max-width: 650px;
+            margin-bottom: 35px;
+        }
+
+        .home-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: 2px solid var(--text);
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                color 0.25s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-4px);
+        }
+
+        .button.primary {
+            background: var(--jaffa-orange);
+            color: white;
+            border-color: var(--jaffa-orange);
+        }
+
+        .button.secondary {
+            background: transparent;
+        }
+
+        .button.secondary:hover {
+            background: var(--butter-yellow);
+        }
+
+        .home-image {
+            position: relative;
+        }
+
+        .home-image img {
+            width: 100%;
+            border-radius: 35px;
+            background: var(--mercury);
+            position: relative;
+            z-index: 2;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .shape.one {
+            width: 130px;
+            height: 130px;
+            background: var(--almost-apricot);
+            top: -45px;
+            right: -30px;
+        }
+
+        .shape.two {
+            width: 100px;
+            height: 100px;
+            background: var(--mellow-rose);
+            bottom: -30px;
+            left: -35px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        #about {
+            background: var(--mercury);
+            max-width: none;
+        }
+
+        .about-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .about-image img {
+            border-radius: 30px;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+        }
+
+        /* =========================
+           WHAT I CAN DO
+        ========================= */
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            padding: 30px;
+            border-radius: 28px;
+            min-height: 230px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .service-card:nth-child(1) {
+            background: var(--butter-yellow);
+        }
+
+        .service-card:nth-child(2) {
+            background: var(--mellow-rose);
+        }
+
+        .service-card:nth-child(3) {
+            background: var(--almost-apricot);
+        }
+
+        .service-card:nth-child(4) {
+            background: var(--mercury);
+        }
+
+        .service-number {
+            font-family: 'Baloo 2', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           TOOLS
+        ========================= */
+
+        #tools {
+            background: var(--butter-yellow);
+            max-width: none;
+        }
+
+        .tools-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 24px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .tool-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 18px;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-6px) rotate(-1deg);
+            box-shadow: 0 12px 25px rgba(59, 51, 45, 0.08);
+        }
+
+        .tool-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 18px;
+            margin-bottom: 12px;
+        }
+
+        .tool-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        /* =========================
+           HOW I WORK
+        ========================= */
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .process-card {
+            border-top: 5px solid var(--jaffa-orange);
+            padding-top: 25px;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--almost-apricot);
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .process-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           PROOF OF WORK
+        ========================= */
+
+        #work {
+            background: var(--mellow-rose);
+            max-width: none;
+        }
+
+        .work-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 24px;
+        }
+
+        .project {
+            background: var(--white);
+            border-radius: 35px;
+            padding: 35px;
+            margin-bottom: 35px;
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .project:nth-child(even) {
+            grid-template-columns: 1.1fr 0.9fr;
+        }
+
+        .project:nth-child(even) .project-image {
+            order: 2;
+        }
+
+        .project-image img {
+            width: 100%;
+            border-radius: 25px;
+        }
+
+        .project-content h3 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            margin-bottom: 18px;
+        }
+
+        .project-content p {
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 700;
+            color: var(--jaffa-orange);
+        }
+
+        /* =========================
+           PDF PROJECTS
+        ========================= */
+
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .pdf-card {
+            background: var(--butter-yellow);
+            border-radius: 20px;
+            padding: 18px;
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 700;
+            transition: transform 0.25s ease;
+        }
+
+        .pdf-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* =========================
+           WHY WORK WITH ME
+        ========================= */
+
+        #why {
+            background: var(--almost-apricot);
+            max-width: none;
+        }
+
+        .why-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 24px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .why-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 28px;
+        }
+
+        .why-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        /* =========================
+           VALUE SECTION
+        ========================= */
+
+        .value-box {
+            background: var(--jaffa-orange);
+            color: white;
+            border-radius: 35px;
+            padding: 45px;
+            margin-top: 35px;
+        }
+
+        .value-box h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .value-box p {
+            max-width: 750px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        #contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 850px;
+            margin: auto;
+            background: var(--butter-yellow);
+            padding: 60px 40px;
+            border-radius: 40px;
+        }
+
+        .contact-box h2 {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            margin-bottom: 20px;
+        }
+
+        .contact-box p {
+            margin-bottom: 25px;
+        }
+
+        .email {
+            display: inline-block;
+            font-family: 'Baloo 2', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--jaffa-orange);
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--text);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-family: 'Baloo 2', sans-serif;
+        }
+
+        /* =========================
+           SCROLL REVEAL
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 950px) {
+            #home,
+            .about-inner,
+            .project,
+            .project:nth-child(even) {
+                grid-template-columns: 1fr;
+            }
+
+            .project:nth-child(even) .project-image {
+                order: 0;
+            }
+
+            .service-grid,
+            .process-grid,
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            section {
+                padding: 70px 20px;
+            }
+
+            .about-inner,
+            .tools-inner,
+            .work-inner,
+            .why-inner {
+                padding: 0 20px;
+            }
+
+            .home-content h1 {
+                font-size: 3.8rem;
+            }
+
+            .service-grid,
+            .process-grid,
+            .why-grid,
+            .tools-grid,
+            .pdf-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                padding: 25px;
+            }
+
+            .contact-box {
+                padding: 45px 25px;
+            }
+
+            .nav-links {
+                font-size: 0.82rem;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                Hey, It's Yana
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#what-i-do">What I Can Do</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#how-i-work">How I Work</a></li>
+                <li><a href="#work">Proof of Work</a></li>
+                <li><a href="#why">Why Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section id="home">
+
+        <div class="home-content reveal">
+
+            <span class="badge">
+                SEO & Content Specialist
+            </span>
+
+            <h1>
+                Hey, I'm <span class="accent">Yana.</span>
+            </h1>
+
+            <p>
+                I help businesses get found online through thoughtful SEO,
+                useful content, and well-managed WordPress publishing.
+            </p>
+
+            <div class="home-buttons">
+                <a href="#work" class="button primary">
+                    See My Work
+                </a>
+
+                <a href="#contact" class="button secondary">
+                    Let's Work Together
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="home-image reveal delay-2">
+
+            <div class="shape one"></div>
+            <div class="shape two"></div>
+
+            <img
+                src="Home- Home.png"
+                alt="Yana working at her desk"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT ME
+    ========================== -->
+
+    <section id="about">
+
+        <div class="about-inner">
+
+            <div class="about-image reveal">
+
+                <img
+                    src="About me and my workspace.PNG"
+                    alt="Yana and her workspace"
+                >
+
+            </div>
+
+
+            <div class="about-text reveal delay-1">
+
+                <div class="section-heading">
+                    <h2>About Me.</h2>
+                </div>
+
+                <p>
+                    I am an SEO Virtual Assistant who helps businesses improve
+                    their online visibility through optimized content,
+                    on-page SEO, keyword research, and WordPress publishing.
+                </p>
+
+                <p>
+                    I started working hands-on in SEO and content, learning
+                    how to research keywords, structure content, optimize
+                    on-page elements, and prepare posts for publishing.
+                </p>
+
+                <p>
+                    I enjoy the detail work that goes into making content
+                    clear, useful, organized, and ready to perform in search.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHAT I CAN DO
+    ========================== -->
+
+    <section id="what-i-do">
+
+        <div class="section-heading reveal">
+
+            <h2>What I Can Do.</h2>
+
+            <p>
+                Practical SEO and content support designed to keep your
+                website useful, organized, and search-friendly.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+            <div class="service-card reveal">
+                <div class="service-number">01</div>
+
+                <div>
+                    <h3>SEO Blog Content</h3>
+
+                    <p>
+                        Clear, useful blog content structured around search
+                        intent and relevant keywords.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="service-card reveal delay-1">
+                <div class="service-number">02</div>
+
+                <div>
+                    <h3>Keyword Research</h3>
+
+                    <p>
+                        Researching relevant search terms to help shape
+                        useful and targeted content.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="service-card reveal delay-2">
+                <div class="service-number">03</div>
+
+                <div>
+                    <h3>On-Page SEO</h3>
+
+                    <p>
+                        Titles, headings, alt text, internal links, URLs,
+                        and other important on-page elements.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="service-card reveal delay-3">
+                <div class="service-number">04</div>
+
+                <div>
+                    <h3>WordPress Publishing</h3>
+
+                    <p>
+                        Uploading, formatting, optimizing, and publishing
+                        content in WordPress.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TOOLS
+    ========================== -->
+
+    <section id="tools">
+
+        <div class="tools-inner">
+
+            <div class="section-heading reveal">
+
+                <h2>Tools I Work With.</h2>
+
+                <p>
+                    The platforms I use to research, organize, optimize,
+                    create, and publish content.
+                </p>
+
+            </div>
+
+
+            <div class="tools-grid">
+
+                <div class="tool-card reveal">
+                    <img
+                        src="WordPress_logo_on_yellow_background_20260924134115.jpeg"
+                        alt="WordPress"
+                    >
+                    <div class="tool-name">WordPress</div>
+                </div>
+
+
+                <div class="tool-card reveal delay-1">
+                    <img
+                        src="Ahrefs_logo_on_solid_background_20260924134128.jpeg"
+                        alt="Ahrefs"
+                    >
+                    <div class="tool-name">Ahrefs</div>
+                </div>
+
+
+                <div class="tool-card reveal delay-2">
+                    <img
+                        src="SurgeGraph_logo_on_pink_background_20260924134437.jpeg"
+                        alt="SurgeGraph"
+                    >
+                    <div class="tool-name">SurgeGraph</div>
+                </div>
+
+
+                <div class="tool-card reveal delay-3">
+                    <img
+                        src="SEO_META_logo_on_background_20260924134137.jpeg"
+                        alt="SEO Meta"
+                    >
+                    <div class="tool-name">SEO Meta</div>
+                </div>
+
+
+                <div class="tool-card reveal">
+                    <img
+                        src="Drupal_CMS_logo_orange_background_20260924134215.jpeg"
+                        alt="Drupal"
+                    >
+                    <div class="tool-name">Drupal</div>
+                </div>
+
+
+                <div class="tool-card reveal delay-1">
+                    <img
+                        src="Trello_logo_on_yellow_background_20260924134221.jpeg"
+                        alt="Trello"
+                    >
+                    <div class="tool-name">Trello</div>
+                </div>
+
+
+                <div class="tool-card reveal delay-2">
+                    <img
+                        src="Airtable_logo_on_solid_background_20260924134218.jpeg"
+                        alt="Airtable"
+                    >
+                    <div class="tool-name">Airtable</div>
+                </div>
+
+
+                <div class="tool-card reveal delay-3">
+                    <img
+                        src="Google_Docs_logo_on_background_20260924134140.jpeg"
+                        alt="Google Docs"
+                    >
+                    <div class="tool-name">Google Docs</div>
+                </div>
+
+
+                <div class="tool-card reveal">
+                    <img
+                        src="Google_Sheets_logo_design_20260924134224.jpeg"
+                        alt="Google Sheets"
+                    >
+                    <div class="tool-name">Google Sheets</div>
+                </div>
+
+
+                <div class="tool-card reveal delay-1">
+                    <img
+                        src="ChatGPT_logo_on_orange_background_20260924134227.jpeg"
+                        alt="ChatGPT"
+                    >
+                    <div class="tool-name">ChatGPT</div>
+                </div>
+
+
+                <div class="tool-card reveal delay-2">
+                    <img
+                        src="Claude_logo_on_yellow_background_20260924134229.jpeg"
+                        alt="Claude"
+                    >
+                    <div class="tool-name">Claude</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         HOW I WORK
+    ========================== -->
+
+    <section id="how-i-work">
+
+        <div class="section-heading reveal">
+
+            <h2>How I Work.</h2>
+
+            <p>
+                A simple process that keeps projects clear, organized,
+                and moving forward.
+            </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="process-card reveal">
+                <div class="step-number">01</div>
+
+                <h3>Discovery</h3>
+
+                <p>
+                    I understand the project, goals, audience, and
+                    requirements before getting started.
+                </p>
+            </div>
+
+
+            <div class="process-card reveal delay-1">
+                <div class="step-number">02</div>
+
+                <h3>Setup</h3>
+
+                <p>
+                    I organize keywords, content requirements,
+                    references, and the workflow.
+                </p>
+            </div>
+
+
+            <div class="process-card reveal delay-2">
+                <div class="step-number">03</div>
+
+                <h3>Execution</h3>
+
+                <p>
+                    I write, optimize, format, and publish the work
+                    according to the agreed specifications.
+                </p>
+            </div>
+
+
+            <div class="process-card reveal delay-3">
+                <div class="step-number">04</div>
+
+                <h3>Review</h3>
+
+                <p>
+                    I check the final work for accuracy, consistency,
+                    formatting, and required SEO elements.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROOF OF WORK
+    ========================== -->
+
+    <section id="work">
+
+        <div class="work-inner">
+
+            <div class="section-heading reveal">
+
+                <h2>Proof of Work.</h2>
+
+                <p>
+                    A few examples of the SEO, content, and publishing
+                    work I've handled.
+                </p>
+
+            </div>
+
+
+            <!-- BIG EASY KITCHENS -->
+
+            <div class="project reveal">
+
+                <div class="project-image">
+
+                    <img
+                        src="BEK- BLOG.png"
+                        alt="Big Easy Kitchens blog project"
+                    >
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        How I turned a common customer question into
+                        SEO-ready content for Big Easy Kitchens.
+                    </h3>
+
+                    <p>
+                        I worked on SEO-focused content designed to answer
+                        a real customer question while keeping the article
+                        useful, structured, and search-friendly.
+                    </p>
+
+                    <a
+                        href="https://www.bigeasykitchens.com/full-home-makeover-vs-partial-renovation-which-kitchen-improvement-strategy-is-right-for-you/"
+                        target="_blank"
+                        class="project-link"
+                    >
+                        View the live article →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROSPLE -->
+
+            <div class="project reveal">
+
+                <div class="project-image">
+
+                    <img
+                        src="first photo pros.png"
+                        alt="Prosple job listing project"
+                    >
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        How I helped Prosple maintain accuracy across
+                        500–600+ monthly job listings — without sacrificing speed.
+                    </h3>
+
+                    <p>
+                        I handled high-volume job posting work while keeping
+                        listings accurate, consistent, organized, and ready
+                        for publication.
+                    </p>
+
+                    <p>
+                        The work involved publishing and formatting job
+                        listings across CMS platforms for interns and
+                        recent graduate students.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROSPLE EMPLOYER / JOB POSTING -->
+
+            <div class="project reveal">
+
+                <div class="project-image">
+
+                    <img
+                        src="2nd photo pros.png"
+                        alt="Prosple employer profile project"
+                    >
+
+                </div>
+
+
+                <div class="project-content">
+
+                    <h3>
+                        Job Posting & Employer Profile Creation for Prosple.
+                    </h3>
+
+                    <p>
+                        I also worked with employer profiles and job posting
+                        content, making sure information was properly
+                        formatted and published accurately.
+                    </p>
+
+
+                    <div class="pdf-grid">
+
+                        <a
+                            href="Firmware Engineer Intern - PFD- CMS.pdf"
+                            target="_blank"
+                            class="pdf-card"
+                        >
+                            Firmware Engineer Intern — CMS
+                        </a>
+
+
+                        <a
+                            href="Firmware Engineer Intern - PFD (ASAP) at Samsung - Prosple.pdf"
+                            target="_blank"
+                            class="pdf-card"
+                        >
+                            Samsung Internship Listing
+                        </a>
+
+
+                        <a
+                            href="Parrish & Partners Employer Cms.pdf"
+                            target="_blank"
+                            class="pdf-card"
+                        >
+                            Parrish & Partners Employer
+                        </a>
+
+
+                        <a
+                            href="Parrish & Partners Internships & Entry-level Jobs.pdf"
+                            target="_blank"
+                            class="pdf-card"
+                        >
+                            Parrish & Partners Jobs
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHY WORK WITH ME
+    ========================== -->
+
+    <section id="why">
+
+        <div class="why-inner">
+
+            <div class="section-heading reveal">
+
+                <h2>Why Work With Me.</h2>
+
+                <p>
+                    I bring hands-on experience, attention to detail,
+                    and a practical approach to SEO and content support.
+                </p>
+
+            </div>
+
+
+            <div class="why-grid">
+
+                <div class="why-card reveal">
+
+                    <h3>SEO-Focused</h3>
+
+                    <p>
+                        I understand the importance of keywords,
+                        structure, search intent, and on-page elements.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card reveal delay-1">
+
+                    <h3>Detail-Oriented</h3>
+
+                    <p>
+                        I pay attention to formatting, consistency,
+                        accuracy, and the small details that matter.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card reveal delay-2">
+
+                    <h3>Comfortable With Volume</h3>
+
+                    <p>
+                        I've worked on high-volume publishing projects
+                        while keeping accuracy and consistency in check.
+                    </p>
+
+                </div>
+
+
+                <div class="why-card reveal delay-3">
+
+                    <h3>Hands-On Experience</h3>
+
+                    <p>
+                        My experience comes from actually writing,
+                        optimizing, organizing, and publishing content.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="value-box reveal">
+
+                <h3>
+                    Work That Adds Real Value.
+                </h3>
+
+                <p>
+                    You get thoughtful, detail-checked SEO and content
+                    support designed to keep your workflow organized,
+                    consistent, and moving forward.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <div class="contact-box reveal">
+
+            <h2>
+                Let's Work Together.
+            </h2>
+
+            <p>
+                Need help with SEO content, keyword research,
+                on-page optimization, or WordPress publishing?
+                I'd love to hear about your project.
+            </p>
+
+            <a
+                href="mailto:yanacharyldelin@gmail.com"
+                class="email"
+            >
+                yanacharyldelin@gmail.com
+            </a>
+
+            <br>
+
+            <a
+                href="mailto:yanacharyldelin@gmail.com"
+                class="button primary"
+            >
+                Get In Touch
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        © 2026 Yana Charyl Bito. All rights reserved.
+
+    </footer>
+
+
+    <!-- =========================
+         SCROLL REVEAL SCRIPT
+    ========================== -->
+
+    <script>
+
+        const revealElements =
+            document.querySelectorAll('.reveal');
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add('visible');
+
+                            /*
+                             * Stop observing after the element
+                             * becomes visible.
+                             *
+                             * This means the animation happens once
+                             * and the element stays visible permanently.
+                             */
+
+                            observer.unobserve(entry.target);
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(element => {
+
+            revealObserver.observe(element);
+
+        });
+
+    </script>
+
+</body>
+</html>
