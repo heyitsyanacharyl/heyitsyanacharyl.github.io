@@ -131,7 +131,7 @@
             font-size: 1.05rem;
         }
 
-        /* REVEAL */
+        /* REVEAL ANIMATION */
 
         .reveal {
             opacity: 0;
@@ -152,10 +152,7 @@
             min-height: calc(100vh - 76px);
             display: flex;
             align-items: center;
-            background:
-                radial-gradient(circle at 10% 20%, var(--butter-yellow) 0 9%, transparent 9.5%),
-                radial-gradient(circle at 90% 80%, var(--mellow-rose) 0 8%, transparent 8.5%),
-                var(--light);
+            background: var(--light);
         }
 
         .home-grid {
@@ -211,10 +208,16 @@
 
         .home-image {
             position: relative;
+            display: flex;
+            justify-content: center;
         }
 
         .home-image img {
             width: 100%;
+            max-width: 540px;
+            height: 500px;
+            object-fit: cover;
+            object-position: center;
             border-radius: 30px;
             border: 8px solid var(--white);
             box-shadow: 15px 15px 0 var(--jaffa-orange);
@@ -366,18 +369,19 @@
             margin-bottom: 12px;
         }
 
-        /* PROOF */
+        /* PROOF OF WORK */
 
         #proof {
             background: var(--light);
         }
 
+        /*
+            The project itself no longer has one large black box.
+            The H3/title stays outside the description box.
+        */
+
         .project {
-            background: var(--white);
-            border: 2px solid var(--dark);
-            border-radius: 30px;
-            padding: 38px;
-            margin-bottom: 35px;
+            margin-bottom: 70px;
         }
 
         .project h3 {
@@ -386,22 +390,39 @@
             margin-bottom: 28px;
         }
 
-        .project-content {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 35px;
-            align-items: start;
+        /*
+            First two projects:
+            image is placed above the description.
+        */
+
+        .project-featured .project-image {
+            width: 100%;
+            margin-bottom: 28px;
         }
 
-        .project-image img {
+        .project-featured .project-image img {
             width: 100%;
+            height: auto;
+            max-height: 620px;
+            object-fit: contain;
             border-radius: 22px;
             border: 6px solid var(--butter-yellow);
+        }
+
+        .project-description {
+            background: var(--white);
+            border: 2px solid var(--dark);
+            border-radius: 28px;
+            padding: 38px;
         }
 
         .project h4 {
             font-size: 1.3rem;
             margin: 20px 0 8px;
+        }
+
+        .project-description h4:first-child {
+            margin-top: 0;
         }
 
         .project p {
@@ -443,6 +464,34 @@
             width: 100%;
             border-radius: 20px;
             border: 5px solid var(--almost-apricot);
+        }
+
+        /*
+            Prosple first project:
+            both original images are large, so they stay large and proportional.
+        */
+
+        .prosple-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 22px;
+            margin-bottom: 28px;
+        }
+
+        .prosple-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 22px;
+            border: 6px solid var(--almost-apricot);
+        }
+
+        /* THIRD PROJECT */
+
+        .project-standard {
+            background: var(--white);
+            border: 2px solid var(--dark);
+            border-radius: 30px;
+            padding: 38px;
         }
 
         .document-links {
@@ -548,6 +597,7 @@
         /* RESPONSIVE */
 
         @media (max-width: 900px) {
+
             .nav-container {
                 flex-direction: column;
                 padding: 15px 0;
@@ -558,8 +608,7 @@
             }
 
             .home-grid,
-            .about-grid,
-            .project-content {
+            .about-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -574,9 +623,16 @@
             .why-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .home-image img {
+                max-width: 600px;
+                height: 480px;
+                margin: 0 auto;
+            }
         }
 
         @media (max-width: 650px) {
+
             section {
                 padding: 75px 0;
             }
@@ -593,8 +649,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .project {
+            .project-description,
+            .project-standard {
                 padding: 24px;
+            }
+
+            .home-image img {
+                height: 380px;
             }
 
             .nav-links {
@@ -604,6 +665,10 @@
             .nav-links a {
                 font-size: 0.82rem;
             }
+
+            .project-featured .project-image img {
+                max-height: none;
+            }
         }
     </style>
 </head>
@@ -612,6 +677,7 @@
 
 <nav>
     <div class="nav-container">
+
         <a href="#home" class="logo">Hey, It's Yana</a>
 
         <ul class="nav-links">
@@ -624,6 +690,7 @@
             <li><a href="#why">Why Work With Me</a></li>
             <li><a href="#contact">Work With Me</a></li>
         </ul>
+
     </div>
 </nav>
 
@@ -631,9 +698,11 @@
 <!-- HOME -->
 
 <section id="home">
+
     <div class="container home-grid">
 
         <div class="home-text reveal">
+
             <h1>Hello! I'm Yana.</h1>
 
             <h2>On-Page SEO &amp; WordPress Content Optimization</h2>
@@ -644,6 +713,7 @@
             </p>
 
             <div class="home-info">
+
                 <div class="info-box">
                     <strong>Based in</strong>
                     <span>Urdaneta City, Philippines</span>
@@ -658,27 +728,42 @@
                     <strong>Availability</strong>
                     <span>30+ hrs/week</span>
                 </div>
+
             </div>
+
         </div>
 
         <div class="home-image reveal">
-            <img src="Home.png" alt="Yana Charyl Bito">
+
+            <img
+                src="Home.png"
+                alt="Yana Charyl Bito"
+            >
+
         </div>
 
     </div>
+
 </section>
 
 
 <!-- ABOUT ME -->
 
 <section id="about">
+
     <div class="container about-grid">
 
         <div class="about-image reveal">
-            <img src="a photo of me and my workspace.PNG" alt="Yana working at her workspace">
+
+            <img
+                src="a photo of me and my workspace.PNG"
+                alt="Yana working at her workspace"
+            >
+
         </div>
 
         <div class="about-text reveal">
+
             <div class="section-heading">
                 <h2>About Me.</h2>
             </div>
@@ -702,15 +787,18 @@
                 of work without losing accuracy. In a past role, I handled 500 to 600+ listings a
                 month without sacrificing accuracy.
             </p>
+
         </div>
 
     </div>
+
 </section>
 
 
 <!-- WHAT I DELIVER -->
 
 <section id="deliver">
+
     <div class="container">
 
         <div class="section-heading reveal">
@@ -720,66 +808,98 @@
         <div class="deliver-grid">
 
             <div class="deliver-card reveal">
+
                 <span class="number">01</span>
+
                 <h3>Pages that rank higher in search</h3>
+
                 <p>
                     On-page SEO fixes: meta titles, headers, alt text, and keyword placement,
                     that help your content get found.
                 </p>
+
             </div>
 
+
             <div class="deliver-card reveal">
+
                 <span class="number">02</span>
+
                 <h3>Content that's easy to read and structured to convert</h3>
+
                 <p>
                     Blog posts and web pages written and formatted for both readers and search engines.
                 </p>
+
             </div>
 
+
             <div class="deliver-card reveal">
+
                 <span class="number">03</span>
+
                 <h3>A site that guides visitors to the right page</h3>
+
                 <p>
                     Internal linking and schema markup that helps both users and search engines
                     navigate your content.
                 </p>
+
             </div>
 
+
             <div class="deliver-card reveal">
+
                 <span class="number">04</span>
+
                 <h3>Blog content, published on schedule</h3>
+
                 <p>
                     Consistent WordPress publishing, 8 to 12 optimized posts per month,
                     delivered on time.
                 </p>
+
             </div>
 
+
             <div class="deliver-card reveal">
+
                 <span class="number">05</span>
+
                 <h3>Accurate, consistent listings at any volume</h3>
+
                 <p>
                     High-volume CMS content managed with precision, up to 500 to 600+ listings
                     a month without errors slipping through.
                 </p>
+
             </div>
 
+
             <div class="deliver-card reveal">
+
                 <span class="number">06</span>
+
                 <h3>Backlinks and guest posts that build authority</h3>
+
                 <p>
                     Guest post uploads and backlink placement to strengthen your site's reach
                     and credibility.
                 </p>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
 <!-- TOOLS -->
 
 <section id="tools">
+
     <div class="container">
 
         <div class="section-heading reveal">
@@ -844,132 +964,187 @@
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
 <!-- HOW WE'LL WORK -->
 
 <section id="how">
+
     <div class="container">
 
         <div class="section-heading reveal">
+
             <h2>How We'll Work.</h2>
-            <p class="method-title">The Clear Content Method</p>
+
+            <p class="method-title">
+                The Clear Content Method
+            </p>
+
         </div>
 
         <div class="steps">
 
             <div class="step reveal">
+
                 <span class="step-number">01</span>
+
                 <h3>Discovery</h3>
+
                 <p>
                     We start with a quick call or written brief where you share your site,
                     goals, and current SEO pain points. I review your existing content and
                     identify where the biggest gaps are: outdated pages, weak rankings,
                     or missing optimization.
                 </p>
+
             </div>
 
+
             <div class="step reveal">
+
                 <span class="step-number">02</span>
+
                 <h3>Setup</h3>
+
                 <p>
                     In the first few days, I organize a task tracker in Trello or Airtable,
                     confirm priority pages and keyword targets, and align on how often we'll
                     check in. Everything is documented so nothing gets lost or repeated.
                 </p>
+
             </div>
 
+
             <div class="step reveal">
+
                 <span class="step-number">03</span>
+
                 <h3>Execution</h3>
+
                 <p>
                     This is the ongoing work: writing, optimizing, and publishing content
                     directly in WordPress on a consistent weekly schedule. I follow the
                     agreed specs and checklist closely, so what you get matches what we planned.
                 </p>
+
             </div>
 
+
             <div class="step reveal">
+
                 <span class="step-number">04</span>
+
                 <h3>Reporting</h3>
+
                 <p>
                     At the end of each week, I send a short update covering what was completed,
                     what's scheduled next, and anything that needs your input, sent through
                     email or whichever channel you prefer, like Slack or WhatsApp.
                 </p>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
 <!-- PROOF OF WORK -->
 
 <section id="proof">
+
     <div class="container">
 
         <div class="section-heading reveal">
+
             <h2>Proof of Work.</h2>
+
         </div>
 
 
         <!-- BIG EASY KITCHENS -->
 
-        <article class="project reveal">
+        <article class="project project-featured reveal">
 
             <h3>
                 How I turned a common customer question into SEO-ready content for Big Easy Kitchens.
             </h3>
 
-            <div class="project-content">
+            <div class="project-image">
 
-                <div class="project-image">
-                    <img src="BEK- BLOG.png" alt="Big Easy Kitchens blog project">
-                </div>
+                <img
+                    src="BEK- BLOG.png"
+                    alt="Big Easy Kitchens blog project"
+                >
 
-                <div>
+            </div>
 
-                    <h4>Problem</h4>
-                    <p>
-                        Big Easy Kitchens needed content that could capture homeowners actively
-                        deciding between a full kitchen remodel and a partial renovation, a
-                        high-intent, comparison-style search topic people look up before they're
-                        ready to book a consultation. The goal was content that could rank for
-                        this decision-stage query while guiding readers naturally toward the brand's services.
-                    </p>
 
-                    <h4>Solution</h4>
+            <div class="project-description">
 
-                    <ul>
-                        <li>Researched and targeted high-intent keywords around kitchen renovation comparison searches</li>
-                        <li>Drafted the article with AI assistance, then proofread and edited it for accuracy and natural, non-AI-sounding copy</li>
-                        <li>Strengthened internal linking across Big Easy Kitchens' related service pages and sub-brand content</li>
-                        <li>Optimized on-page elements: headers, meta title, and content structure, for readability and search visibility</li>
-                        <li>Published directly in WordPress, formatted for skimmability with clear sections</li>
-                    </ul>
+                <h4>Problem</h4>
 
-                    <h4>Result</h4>
+                <p>
+                    Big Easy Kitchens needed content that could capture homeowners actively
+                    deciding between a full kitchen remodel and a partial renovation, a
+                    high-intent, comparison-style search topic people look up before they're
+                    ready to book a consultation. The goal was content that could rank for
+                    this decision-stage query while guiding readers naturally toward the brand's services.
+                </p>
 
-                    <p>
-                        The article went from assignment to live publication in under 24 hours,
-                        giving Big Easy Kitchens a new decision-stage entry point connected to
-                        their service pages through stronger internal linking, with no gap in
-                        their content coverage for this high-demand search topic.
-                    </p>
 
-                    <a
-                        class="project-link"
-                        href="https://www.bigeasykitchens.com/full-home-makeover-vs-partial-renovation-which-kitchen-improvement-strategy-is-right-for-you/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View the live article →
-                    </a>
+                <h4>Solution</h4>
 
-                </div>
+                <ul>
+
+                    <li>
+                        Researched and targeted high-intent keywords around kitchen renovation comparison searches
+                    </li>
+
+                    <li>
+                        Drafted the article with AI assistance, then proofread and edited it for accuracy and natural, non-AI-sounding copy
+                    </li>
+
+                    <li>
+                        Strengthened internal linking across Big Easy Kitchens' related service pages and sub-brand content
+                    </li>
+
+                    <li>
+                        Optimized on-page elements: headers, meta title, and content structure, for readability and search visibility
+                    </li>
+
+                    <li>
+                        Published directly in WordPress, formatted for skimmability with clear sections
+                    </li>
+
+                </ul>
+
+
+                <h4>Result</h4>
+
+                <p>
+                    The article went from assignment to live publication in under 24 hours,
+                    giving Big Easy Kitchens a new decision-stage entry point connected to
+                    their service pages through stronger internal linking, with no gap in
+                    their content coverage for this high-demand search topic.
+                </p>
+
+
+                <a
+                    class="project-link"
+                    href="https://www.bigeasykitchens.com/full-home-makeover-vs-partial-renovation-which-kitchen-improvement-strategy-is-right-for-you/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View the live article →
+                </a>
+
             </div>
 
         </article>
@@ -977,53 +1152,61 @@
 
         <!-- PROSPLE LISTINGS -->
 
-        <article class="project reveal">
+        <article class="project project-featured reveal">
 
             <h3>
                 How I helped Prosple maintain accuracy across 500–600+ monthly job listings — without sacrificing speed.
             </h3>
 
-            <div class="project-content">
 
-                <div class="project-gallery">
+            <div class="prosple-gallery">
 
-                    <img src="first photo pros 1.png" alt="Prosple CMS listing">
-                    <img src="2nd photo pros.png" alt="Prosple job listing">
+                <img
+                    src="first photo pros 1.png"
+                    alt="Prosple CMS listing"
+                >
 
-                </div>
+                <img
+                    src="2nd photo pros.png"
+                    alt="Prosple job listing"
+                >
 
-                <div>
+            </div>
 
-                    <h4>Problem</h4>
 
-                    <p>
-                        Prosple needed to post and maintain a high volume of internship and graduate
-                        job listings for US-based roles every month, a workload where accuracy and
-                        consistency easily slip when speed is also required. Manually tracking hundreds
-                        of listings without a structured system risks duplicate posts, outdated listings,
-                        and formatting errors that hurt applicant engagement.
-                    </p>
+            <div class="project-description">
 
-                    <h4>Solution</h4>
+                <h4>Problem</h4>
 
-                    <p>
-                        I managed the full listing workflow in the CMS: posting new roles, optimizing
-                        job descriptions using structured formatting guidelines, and tracking assigned
-                        tasks and progress in Airtable to avoid duplication or missed updates. I followed
-                        consistent formatting standards across every listing to keep the front-end display
-                        clean and readable at scale, checking employer names, job titles, and listing
-                        details for accuracy before publishing.
-                    </p>
+                <p>
+                    Prosple needed to post and maintain a high volume of internship and graduate
+                    job listings for US-based roles every month, a workload where accuracy and
+                    consistency easily slip when speed is also required. Manually tracking hundreds
+                    of listings without a structured system risks duplicate posts, outdated listings,
+                    and formatting errors that hurt applicant engagement.
+                </p>
 
-                    <h4>Result</h4>
 
-                    <p>
-                        Filtered CMS records show sustained monthly volume in the 500 to 600+ range,
-                        with one tracked period reaching 688 listings, all managed and maintained without
-                        losing consistency across postings.
-                    </p>
+                <h4>Solution</h4>
 
-                </div>
+                <p>
+                    I managed the full listing workflow in the CMS: posting new roles, optimizing
+                    job descriptions using structured formatting guidelines, and tracking assigned
+                    tasks and progress in Airtable to avoid duplication or missed updates. I followed
+                    consistent formatting standards across every listing to keep the front-end display
+                    clean and readable at scale, checking employer names, job titles, and listing
+                    details for accuracy before publishing.
+                </p>
+
+
+                <h4>Result</h4>
+
+                <p>
+                    Filtered CMS records show sustained monthly volume in the 500 to 600+ range,
+                    with one tracked period reaching 688 listings, all managed and maintained without
+                    losing consistency across postings.
+                </p>
+
             </div>
 
         </article>
@@ -1031,11 +1214,12 @@
 
         <!-- EMPLOYER PROFILE -->
 
-        <article class="project reveal">
+        <article class="project project-standard reveal">
 
             <h3>
                 Job Posting &amp; Employer Profile Creation for Prosple.
             </h3>
+
 
             <div class="project-content">
 
@@ -1049,13 +1233,25 @@
                         before any job could be posted under it.
                     </p>
 
+
                     <h4>Solution</h4>
 
                     <ul>
-                        <li>Created and published new employer profiles in the CMS, structuring company details, descriptions, and formatting to match platform standards</li>
-                        <li>Reviewed and published job listings under those profiles, keeping formatting, structure, and detail consistent with each employer's information</li>
-                        <li>Checked employer details and listing content for accuracy before anything went live</li>
+
+                        <li>
+                            Created and published new employer profiles in the CMS, structuring company details, descriptions, and formatting to match platform standards
+                        </li>
+
+                        <li>
+                            Reviewed and published job listings under those profiles, keeping formatting, structure, and detail consistent with each employer's information
+                        </li>
+
+                        <li>
+                            Checked employer details and listing content for accuracy before anything went live
+                        </li>
+
                     </ul>
+
 
                     <h4>Result</h4>
 
@@ -1066,6 +1262,7 @@
                     </p>
 
                 </div>
+
 
                 <div class="document-links">
 
@@ -1078,6 +1275,7 @@
                         <span>Shows CMS formatting and structured input.</span>
                     </a>
 
+
                     <a
                         class="document-link"
                         href="Firmware Engineer Intern - PFD (ASAP) at Samsung - Prosple.pdf"
@@ -1087,6 +1285,7 @@
                         <span>Shows the final published layout.</span>
                     </a>
 
+
                     <a
                         class="document-link"
                         href="Parrish & Partners Employer Cms.pdf"
@@ -1095,6 +1294,7 @@
                         <strong>Parrish &amp; Partners, Employer Profile (CMS version) →</strong>
                         <span>Shows CMS formatting, structured input fields, and employer details setup.</span>
                     </a>
+
 
                     <a
                         class="document-link"
@@ -1112,22 +1312,29 @@
         </article>
 
     </div>
+
 </section>
 
 
 <!-- WHY WORK WITH ME -->
 
 <section id="why">
+
     <div class="container">
 
         <div class="section-heading reveal">
+
             <h2>Why Work With Me.</h2>
+
         </div>
+
 
         <div class="why-grid">
 
             <div class="why-card reveal">
+
                 <span class="number">01</span>
+
                 <h3>Time Zone Advantage</h3>
 
                 <p>
@@ -1136,10 +1343,14 @@
                     afternoons. Work keeps moving on your content and SEO tasks even while
                     you're offline.
                 </p>
+
             </div>
 
+
             <div class="why-card reveal">
+
                 <span class="number">02</span>
+
                 <h3>Precise Editing &amp; Quality Control</h3>
 
                 <p>
@@ -1149,10 +1360,14 @@
                     That combination, fast drafting plus a sharp editorial eye, is what actually
                     matters for content and CMS work at volume.
                 </p>
+
             </div>
 
+
             <div class="why-card reveal">
+
                 <span class="number">03</span>
+
                 <h3>Hands-On Experience Across Two Skill Sets</h3>
 
                 <p>
@@ -1163,26 +1378,34 @@
                     than guess, which matters for accuracy-critical work like managing
                     500+ listings a month.
                 </p>
+
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
 <!-- WORK WITH ME -->
 
 <section id="contact">
+
     <div class="container">
 
         <div class="section-heading reveal">
+
             <h2>Let's Work Together.</h2>
+
         </div>
+
 
         <p class="contact-text reveal">
             Need help with SEO content, keyword research, on page optimization, or WordPress
             publishing? I'd love to hear about your project!
         </p>
+
 
         <div class="contact-links reveal">
 
@@ -1193,6 +1416,7 @@
                 Email Me
             </a>
 
+
             <a
                 class="contact-link"
                 href="https://www.linkedin.com/"
@@ -1202,6 +1426,7 @@
                 Yana on LinkedIn
             </a>
 
+
             <a
                 class="contact-link"
                 href="tel:+639174803967"
@@ -1210,32 +1435,97 @@
             </a>
 
         </div>
+
     </div>
+
 </section>
 
 
 <script>
+    /*
+        REVEAL ANIMATION
+
+        Elements reveal when they enter the screen.
+
+        Once revealed:
+        - .visible is added
+        - the element is no longer observed
+        - the class is NEVER removed
+        - scrolling back up will NOT hide it
+    */
+
     const revealElements = document.querySelectorAll('.reveal');
+
+    const revealElement = (element) => {
+        if (!element.classList.contains('visible')) {
+            element.classList.add('visible');
+        }
+    };
 
     const observer = new IntersectionObserver(
         (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
 
-                    // Stop observing after the element appears.
-                    // This keeps it visible permanently.
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    revealElement(entry.target);
+
+                    /*
+                        Stop watching this element completely.
+                        It will remain visible permanently.
+                    */
                     observer.unobserve(entry.target);
                 }
+
             });
+
         },
         {
             threshold: 0.12
         }
     );
 
+
     revealElements.forEach((element) => {
         observer.observe(element);
+    });
+
+
+    /*
+        Immediately reveal anything that is already visible
+        when the page loads or when navigation jumps to it.
+    */
+
+    const revealVisibleElements = () => {
+
+        revealElements.forEach((element) => {
+
+            if (element.classList.contains('visible')) {
+                return;
+            }
+
+            const rect = element.getBoundingClientRect();
+
+            if (
+                rect.top < window.innerHeight &&
+                rect.bottom > 0
+            ) {
+                revealElement(element);
+                observer.unobserve(element);
+            }
+
+        });
+
+    };
+
+
+    window.addEventListener('load', revealVisibleElements);
+
+    window.addEventListener('pageshow', revealVisibleElements);
+
+    window.addEventListener('scroll', revealVisibleElements, {
+        passive: true
     });
 </script>
 
