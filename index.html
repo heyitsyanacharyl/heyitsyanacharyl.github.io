@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yana Charyl | SEO & Content Specialist</title>
+    <title>Yana Charyl Bito | On-Page SEO & WordPress Content Optimization</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -284,12 +284,16 @@
         }
 
         /* =========================
-           WHAT I CAN DO
+           WHAT I DELIVER
         ========================= */
+
+        #what-i-do {
+            max-width: 1200px;
+        }
 
         .service-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
@@ -321,6 +325,14 @@
 
         .service-card:nth-child(4) {
             background: var(--mercury);
+        }
+
+        .service-card:nth-child(5) {
+            background: var(--butter-yellow);
+        }
+
+        .service-card:nth-child(6) {
+            background: var(--mellow-rose);
         }
 
         .service-number {
@@ -383,8 +395,12 @@
         }
 
         /* =========================
-           HOW I WORK
+           HOW WE'LL WORK
         ========================= */
+
+        #how-i-work {
+            max-width: 1200px;
+        }
 
         .process-grid {
             display: grid;
@@ -454,8 +470,23 @@
             margin-bottom: 18px;
         }
 
+        .project-content h4 {
+            font-family: 'Baloo 2', sans-serif;
+            font-size: 1.25rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
         .project-content p {
             margin-bottom: 20px;
+        }
+
+        .project-content ul {
+            margin: 0 0 20px 22px;
+        }
+
+        .project-content li {
+            margin-bottom: 8px;
         }
 
         .project-link {
@@ -505,7 +536,7 @@
 
         .why-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
@@ -518,27 +549,6 @@
         .why-card h3 {
             font-size: 1.4rem;
             margin-bottom: 12px;
-        }
-
-        /* =========================
-           VALUE SECTION
-        ========================= */
-
-        .value-box {
-            background: var(--jaffa-orange);
-            color: white;
-            border-radius: 35px;
-            padding: 45px;
-            margin-top: 35px;
-        }
-
-        .value-box h3 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .value-box p {
-            max-width: 750px;
         }
 
         /* =========================
@@ -573,6 +583,18 @@
             font-weight: 700;
             color: var(--jaffa-orange);
             margin-bottom: 25px;
+        }
+
+        .contact-details {
+            margin-top: 25px;
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+        }
+
+        .contact-details strong {
+            font-family: 'Baloo 2', sans-serif;
         }
 
         /* =========================
@@ -712,12 +734,12 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
-                <li><a href="#what-i-do">What I Can Do</a></li>
-                <li><a href="#tools">Tools</a></li>
-                <li><a href="#how-i-work">How I Work</a></li>
+                <li><a href="#what-i-do">What I Deliver</a></li>
+                <li><a href="#tools">Tools I Work In</a></li>
+                <li><a href="#how-i-work">How We'll Work</a></li>
                 <li><a href="#work">Proof of Work</a></li>
-                <li><a href="#why">Why Me</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#why">Why Work With Me</a></li>
+                <li><a href="#contact">Work With Me</a></li>
             </ul>
 
         </div>
@@ -733,26 +755,43 @@
         <div class="home-content reveal">
 
             <span class="badge">
-                SEO & Content Specialist
+                On-Page SEO & WordPress Content Optimization
             </span>
 
             <h1>
-                Hey, I'm <span class="accent">Yana.</span>
+                Yana Charyl Bito
             </h1>
 
             <p>
-                I help businesses get found online through thoughtful SEO,
-                useful content, and well-managed WordPress publishing.
+                I help local service businesses optimize their on-page SEO and WordPress content so they can rank higher and reach more customers online.
             </p>
 
+            <div class="contact-details">
+
+                <p>
+                    <strong>Based in</strong> Urdaneta City, Philippines
+                </p>
+
+                <p>
+                    <strong>Time zone</strong> PHT (Philippine Time), UTC+8
+                </p>
+
+                <p>
+                    <strong>Available</strong> 30+ hrs/week
+                </p>
+
+            </div>
+
             <div class="home-buttons">
+
                 <a href="#work" class="button primary">
                     See My Work
                 </a>
 
                 <a href="#contact" class="button secondary">
-                    Let's Work Together
+                    Work With Me
                 </a>
+
             </div>
 
         </div>
@@ -765,7 +804,7 @@
 
             <img
                 src="Home- Home.png"
-                alt="Yana working at her desk"
+                alt="Yana"
             >
 
         </div>
@@ -784,7 +823,7 @@
             <div class="about-image reveal">
 
                 <img
-                    src="About me and my workspace.PNG"
+                    src="About me - a photo of me and my workspace.PNG"
                     alt="Yana and her workspace"
                 >
 
@@ -794,24 +833,21 @@
             <div class="about-text reveal delay-1">
 
                 <div class="section-heading">
+
                     <h2>About Me.</h2>
+
                 </div>
 
                 <p>
-                    I am an SEO Virtual Assistant who helps businesses improve
-                    their online visibility through optimized content,
-                    on-page SEO, keyword research, and WordPress publishing.
+                    I am an SEO Virtual Assistant who helps local service businesses rank higher and reach more customers through optimized, on-page SEO and well-managed WordPress content.
                 </p>
 
                 <p>
-                    I started working hands-on in SEO and content, learning
-                    how to research keywords, structure content, optimize
-                    on-page elements, and prepare posts for publishing.
+                    After a year working hands-on in SEO, keyword research, on-page optimization, and content publishing, I found I genuinely enjoy the detail work: fixing the small technical pieces that most people skip but that actually move a page up in search results. That's why I've stayed focused on execution-level SEO and content management rather than broad strategy.
                 </p>
 
                 <p>
-                    I enjoy the detail work that goes into making content
-                    clear, useful, organized, and ready to perform in search.
+                    When you work with me, you get someone who follows specs precisely and delivers optimized, publish-ready content on time. I'm also comfortable managing high volumes of work without losing accuracy. In a past role, I handled 500 to 600+ listings a month without sacrificing accuracy.
                 </p>
 
             </div>
@@ -822,19 +858,14 @@
 
 
     <!-- =========================
-         WHAT I CAN DO
+         WHAT I DELIVER
     ========================== -->
 
     <section id="what-i-do">
 
         <div class="section-heading reveal">
 
-            <h2>What I Can Do.</h2>
-
-            <p>
-                Practical SEO and content support designed to keep your
-                website useful, organized, and search-friendly.
-            </p>
+            <h2>What I Deliver.</h2>
 
         </div>
 
@@ -842,58 +873,128 @@
         <div class="service-grid">
 
             <div class="service-card reveal">
-                <div class="service-number">01</div>
+
+                <div class="service-number">
+                    01
+                </div>
 
                 <div>
-                    <h3>SEO Blog Content</h3>
+
+                    <h3>
+                        Pages that rank higher in search
+                    </h3>
 
                     <p>
-                        Clear, useful blog content structured around search
-                        intent and relevant keywords.
+                        On-page SEO fixes: meta titles, headers, alt text, and keyword placement, that help your content get found.
                     </p>
+
                 </div>
+
             </div>
 
 
             <div class="service-card reveal delay-1">
-                <div class="service-number">02</div>
+
+                <div class="service-number">
+                    02
+                </div>
 
                 <div>
-                    <h3>Keyword Research</h3>
+
+                    <h3>
+                        Content that's easy to read and structured to convert
+                    </h3>
 
                     <p>
-                        Researching relevant search terms to help shape
-                        useful and targeted content.
+                        Blog posts and web pages written and formatted for both readers and search engines.
                     </p>
+
                 </div>
+
             </div>
 
 
             <div class="service-card reveal delay-2">
-                <div class="service-number">03</div>
+
+                <div class="service-number">
+                    03
+                </div>
 
                 <div>
-                    <h3>On-Page SEO</h3>
+
+                    <h3>
+                        A site that guides visitors to the right page
+                    </h3>
 
                     <p>
-                        Titles, headings, alt text, internal links, URLs,
-                        and other important on-page elements.
+                        Internal linking and schema markup that helps both users and search engines navigate your content.
                     </p>
+
                 </div>
+
             </div>
 
 
             <div class="service-card reveal delay-3">
-                <div class="service-number">04</div>
+
+                <div class="service-number">
+                    04
+                </div>
 
                 <div>
-                    <h3>WordPress Publishing</h3>
+
+                    <h3>
+                        Blog content, published on schedule
+                    </h3>
 
                     <p>
-                        Uploading, formatting, optimizing, and publishing
-                        content in WordPress.
+                        Consistent WordPress publishing, 8 to 12 optimized posts per month, delivered on time.
                     </p>
+
                 </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <div class="service-number">
+                    05
+                </div>
+
+                <div>
+
+                    <h3>
+                        Accurate, consistent listings at any volume
+                    </h3>
+
+                    <p>
+                        High-volume CMS content managed with precision, 500 to 600+ listings a month without errors slipping through.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal delay-1">
+
+                <div class="service-number">
+                    06
+                </div>
+
+                <div>
+
+                    <h3>
+                        Backlinks and guest posts that build authority
+                    </h3>
+
+                    <p>
+                        Guest post uploads and backlink placement to strengthen your site's reach and credibility.
+                    </p>
+
+                </div>
+
             </div>
 
         </div>
@@ -911,12 +1012,7 @@
 
             <div class="section-heading reveal">
 
-                <h2>Tools I Work With.</h2>
-
-                <p>
-                    The platforms I use to research, organize, optimize,
-                    create, and publish content.
-                </p>
+                <h2>Tools I Work In.</h2>
 
             </div>
 
@@ -924,101 +1020,156 @@
             <div class="tools-grid">
 
                 <div class="tool-card reveal">
+
                     <img
                         src="WordPress_logo_on_yellow_background_20260924134115.jpeg"
                         alt="WordPress"
                     >
-                    <div class="tool-name">WordPress</div>
+
+                    <div class="tool-name">
+                        WordPress
+                    </div>
+
                 </div>
 
 
                 <div class="tool-card reveal delay-1">
+
                     <img
                         src="Ahrefs_logo_on_solid_background_20260924134128.jpeg"
                         alt="Ahrefs"
                     >
-                    <div class="tool-name">Ahrefs</div>
+
+                    <div class="tool-name">
+                        Ahrefs
+                    </div>
+
                 </div>
 
 
                 <div class="tool-card reveal delay-2">
+
                     <img
                         src="SurgeGraph_logo_on_pink_background_20260924134437.jpeg"
                         alt="SurgeGraph"
                     >
-                    <div class="tool-name">SurgeGraph</div>
+
+                    <div class="tool-name">
+                        SurgeGraph
+                    </div>
+
                 </div>
 
 
                 <div class="tool-card reveal delay-3">
+
                     <img
                         src="SEO_META_logo_on_background_20260924134137.jpeg"
-                        alt="SEO Meta"
+                        alt="SEO META in 1 CLICK"
                     >
-                    <div class="tool-name">SEO Meta</div>
+
+                    <div class="tool-name">
+                        SEO META in 1 CLICK
+                    </div>
+
                 </div>
 
 
                 <div class="tool-card reveal">
+
                     <img
                         src="Drupal_CMS_logo_orange_background_20260924134215.jpeg"
-                        alt="Drupal"
+                        alt="Drupal CMS"
                     >
-                    <div class="tool-name">Drupal</div>
+
+                    <div class="tool-name">
+                        Drupal CMS
+                    </div>
+
                 </div>
 
 
                 <div class="tool-card reveal delay-1">
+
                     <img
                         src="Trello_logo_on_yellow_background_20260924134221.jpeg"
                         alt="Trello"
                     >
-                    <div class="tool-name">Trello</div>
+
+                    <div class="tool-name">
+                        Trello
+                    </div>
+
                 </div>
 
 
                 <div class="tool-card reveal delay-2">
+
                     <img
                         src="Airtable_logo_on_solid_background_20260924134218.jpeg"
                         alt="Airtable"
                     >
-                    <div class="tool-name">Airtable</div>
+
+                    <div class="tool-name">
+                        Airtable
+                    </div>
+
                 </div>
 
 
                 <div class="tool-card reveal delay-3">
+
                     <img
                         src="Google_Docs_logo_on_background_20260924134140.jpeg"
                         alt="Google Docs"
                     >
-                    <div class="tool-name">Google Docs</div>
+
+                    <div class="tool-name">
+                        Google Docs
+                    </div>
+
                 </div>
 
 
                 <div class="tool-card reveal">
+
                     <img
                         src="Google_Sheets_logo_design_20260924134224.jpeg"
                         alt="Google Sheets"
                     >
-                    <div class="tool-name">Google Sheets</div>
+
+                    <div class="tool-name">
+                        Google Sheets
+                    </div>
+
                 </div>
 
 
                 <div class="tool-card reveal delay-1">
+
                     <img
                         src="ChatGPT_logo_on_orange_background_20260924134227.jpeg"
                         alt="ChatGPT"
                     >
-                    <div class="tool-name">ChatGPT</div>
+
+                    <div class="tool-name">
+                        ChatGPT
+                    </div>
+
                 </div>
 
 
                 <div class="tool-card reveal delay-2">
+
                     <img
                         src="Claude_logo_on_yellow_background_20260924134229.jpeg"
                         alt="Claude"
                     >
-                    <div class="tool-name">Claude</div>
+
+                    <div class="tool-name">
+                        Claude
+                    </div>
+
                 </div>
 
             </div>
@@ -1029,18 +1180,17 @@
 
 
     <!-- =========================
-         HOW I WORK
+         HOW WE'LL WORK
     ========================== -->
 
     <section id="how-i-work">
 
         <div class="section-heading reveal">
 
-            <h2>How I Work.</h2>
+            <h2>How We'll Work.</h2>
 
             <p>
-                A simple process that keeps projects clear, organized,
-                and moving forward.
+                The Clear Content Method
             </p>
 
         </div>
@@ -1049,50 +1199,70 @@
         <div class="process-grid">
 
             <div class="process-card reveal">
-                <div class="step-number">01</div>
 
-                <h3>Discovery</h3>
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Discovery
+                </h3>
 
                 <p>
-                    I understand the project, goals, audience, and
-                    requirements before getting started.
+                    We start with a quick call or written brief where you share your site, goals, and current SEO pain points. I review your existing content and identify where the biggest gaps are: outdated pages, weak rankings, or missing optimization.
                 </p>
+
             </div>
 
 
             <div class="process-card reveal delay-1">
-                <div class="step-number">02</div>
 
-                <h3>Setup</h3>
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Setup
+                </h3>
 
                 <p>
-                    I organize keywords, content requirements,
-                    references, and the workflow.
+                    In the first few days, I organize a task tracker in Trello or Airtable, confirm priority pages and keyword targets, and align on how often we'll check in. Everything is documented so nothing gets lost or repeated.
                 </p>
+
             </div>
 
 
             <div class="process-card reveal delay-2">
-                <div class="step-number">03</div>
 
-                <h3>Execution</h3>
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Execution
+                </h3>
 
                 <p>
-                    I write, optimize, format, and publish the work
-                    according to the agreed specifications.
+                    This is the ongoing work: writing, optimizing, and publishing content directly in WordPress on a consistent weekly schedule. I follow the agreed specs and checklist closely, so what you get matches what we planned.
                 </p>
+
             </div>
 
 
             <div class="process-card reveal delay-3">
-                <div class="step-number">04</div>
 
-                <h3>Review</h3>
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Reporting
+                </h3>
 
                 <p>
-                    I check the final work for accuracy, consistency,
-                    formatting, and required SEO elements.
+                    At the end of each week, I send a short update covering what was completed, what's scheduled next, and anything that needs your input, sent through email or whichever channel you prefer, like Slack or WhatsApp.
                 </p>
+
             </div>
 
         </div>
@@ -1112,11 +1282,6 @@
 
                 <h2>Proof of Work.</h2>
 
-                <p>
-                    A few examples of the SEO, content, and publishing
-                    work I've handled.
-                </p>
-
             </div>
 
 
@@ -1128,7 +1293,7 @@
 
                     <img
                         src="BEK- BLOG.png"
-                        alt="Big Easy Kitchens blog project"
+                        alt="Big Easy Kitchens blog"
                     >
 
                 </div>
@@ -1137,15 +1302,54 @@
                 <div class="project-content">
 
                     <h3>
-                        How I turned a common customer question into
-                        SEO-ready content for Big Easy Kitchens.
+                        How I turned a common customer question into SEO-ready content for Big Easy Kitchens.
                     </h3>
 
+
+                    <h4>
+                        Problem
+                    </h4>
+
                     <p>
-                        I worked on SEO-focused content designed to answer
-                        a real customer question while keeping the article
-                        useful, structured, and search-friendly.
+                        Big Easy Kitchens needed content that could capture homeowners actively deciding between a full kitchen remodel and a partial renovation, a high-intent, comparison-style search topic people look up before they're ready to book a consultation. The goal was content that could rank for this decision-stage query while guiding readers naturally toward the brand's services.
                     </p>
+
+
+                    <h4>
+                        Solution
+                    </h4>
+
+                    <ul>
+                        <li>
+                            Researched and targeted high-intent keywords around kitchen renovation comparison searches
+                        </li>
+
+                        <li>
+                            Drafted the article with AI assistance, then proofread and edited it for accuracy and natural, non-AI-sounding copy
+                        </li>
+
+                        <li>
+                            Strengthened internal linking across Big Easy Kitchens' related service pages and sub-brand content
+                        </li>
+
+                        <li>
+                            Optimized on-page elements: headers, meta title, and content structure, for readability and search visibility
+                        </li>
+
+                        <li>
+                            Published directly in WordPress, formatted for skimmability with clear sections
+                        </li>
+                    </ul>
+
+
+                    <h4>
+                        Result
+                    </h4>
+
+                    <p>
+                        The article went from assignment to live publication in under 24 hours, giving Big Easy Kitchens a new decision-stage entry point connected to their service pages through stronger internal linking, with no gap in their content coverage for this high-demand search topic.
+                    </p>
+
 
                     <a
                         href="https://www.bigeasykitchens.com/full-home-makeover-vs-partial-renovation-which-kitchen-improvement-strategy-is-right-for-you/"
@@ -1160,7 +1364,7 @@
             </div>
 
 
-            <!-- PROSPLE -->
+            <!-- PROSPLE LISTINGS -->
 
             <div class="project reveal">
 
@@ -1168,7 +1372,7 @@
 
                     <img
                         src="first photo pros.png"
-                        alt="Prosple job listing project"
+                        alt="Prosple job listings"
                     >
 
                 </div>
@@ -1177,20 +1381,34 @@
                 <div class="project-content">
 
                     <h3>
-                        How I helped Prosple maintain accuracy across
-                        500–600+ monthly job listings — without sacrificing speed.
+                        How I helped Prosple maintain accuracy across 600+ monthly job listings without sacrificing speed.
                     </h3>
 
-                    <p>
-                        I handled high-volume job posting work while keeping
-                        listings accurate, consistent, organized, and ready
-                        for publication.
-                    </p>
+
+                    <h4>
+                        Problem
+                    </h4>
 
                     <p>
-                        The work involved publishing and formatting job
-                        listings across CMS platforms for interns and
-                        recent graduate students.
+                        Prosple needed to post and maintain a high volume of internship and graduate job listings for US-based roles every month, a workload where accuracy and consistency easily slip when speed is also required. Manually tracking hundreds of listings without a structured system risks duplicate posts, outdated listings, and formatting errors that hurt applicant engagement.
+                    </p>
+
+
+                    <h4>
+                        Solution
+                    </h4>
+
+                    <p>
+                        I managed the full listing workflow in the CMS: posting new roles, optimizing job descriptions using structured formatting guidelines, and tracking assigned tasks and progress in Airtable to avoid duplication or missed updates. I followed consistent formatting standards across every listing to keep the front-end display clean and readable at scale, checking employer names, job titles, and listing details for accuracy before publishing.
+                    </p>
+
+
+                    <h4>
+                        Result
+                    </h4>
+
+                    <p>
+                        Filtered CMS records show sustained monthly volume in the 500 to 600+ range, with one tracked period reaching 688 listings, all managed and maintained without losing consistency across postings.
                     </p>
 
                 </div>
@@ -1198,7 +1416,7 @@
             </div>
 
 
-            <!-- PROSPLE EMPLOYER / JOB POSTING -->
+            <!-- PROSPLE EMPLOYER PROFILES -->
 
             <div class="project reveal">
 
@@ -1206,7 +1424,7 @@
 
                     <img
                         src="2nd photo pros.png"
-                        alt="Prosple employer profile project"
+                        alt="Prosple employer profile creation"
                     >
 
                 </div>
@@ -1218,12 +1436,53 @@
                         Job Posting & Employer Profile Creation for Prosple.
                     </h3>
 
+
+                    <h4>
+                        Problem
+                    </h4>
+
                     <p>
-                        I also worked with employer profiles and job posting
-                        content, making sure information was properly
-                        formatted and published accurately.
+                        At Prosple, a job listing could only go live once the employer's profile was published. That meant getting the employer profile setup right came first, before any job could be posted under it.
                     </p>
 
+
+                    <h4>
+                        Solution
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            Created and published new employer profiles in the CMS, structuring company details, descriptions, and formatting to match platform standards
+                        </li>
+
+                        <li>
+                            Reviewed and published job listings under those profiles, keeping formatting, structure, and detail consistent with each employer's information
+                        </li>
+
+                        <li>
+                            Checked employer details and listing content for accuracy before anything went live
+                        </li>
+
+                    </ul>
+
+
+                    <h4>
+                        Result
+                    </h4>
+
+                    <p>
+                        Since job listings depend on the employer profile going live first, getting the profile setup right the first time kept the whole posting process moving without delays.
+                    </p>
+
+
+                    <h4>
+                        Job Posting, Backend Version
+                    </h4>
+
+                    <p>
+                        Shows CMS formatting and structured input.
+                    </p>
 
                     <div class="pdf-grid">
 
@@ -1232,34 +1491,70 @@
                             target="_blank"
                             class="pdf-card"
                         >
-                            Firmware Engineer Intern — CMS
+                            Firmware Engineer Intern, PFD →
                         </a>
 
+                    </div>
+
+
+                    <h4>
+                        Job Posting, Frontend Version
+                    </h4>
+
+                    <p>
+                        Shows the final published layout.
+                    </p>
+
+                    <div class="pdf-grid">
 
                         <a
                             href="Firmware Engineer Intern - PFD (ASAP) at Samsung - Prosple.pdf"
                             target="_blank"
                             class="pdf-card"
                         >
-                            Samsung Internship Listing
+                            Firmware Engineer Intern, PFD (ASAP) at Samsung →
                         </a>
 
+                    </div>
+
+
+                    <h4>
+                        New Employer Profile, Backend Version
+                    </h4>
+
+                    <p>
+                        Shows CMS formatting, structured input fields, and employer details setup.
+                    </p>
+
+                    <div class="pdf-grid">
 
                         <a
                             href="Parrish & Partners Employer Cms.pdf"
                             target="_blank"
                             class="pdf-card"
                         >
-                            Parrish & Partners Employer
+                            Parrish & Partners, Employer Profile (CMS version) →
                         </a>
 
+                    </div>
+
+
+                    <h4>
+                        New Employer Profile, Frontend Version
+                    </h4>
+
+                    <p>
+                        Shows the final published employer profile layout visible to users.
+                    </p>
+
+                    <div class="pdf-grid">
 
                         <a
                             href="Parrish & Partners Internships & Entry-level Jobs.pdf"
                             target="_blank"
                             class="pdf-card"
                         >
-                            Parrish & Partners Jobs
+                            Parrish & Partners, Employer Profile (live view) →
                         </a>
 
                     </div>
@@ -1285,11 +1580,6 @@
 
                 <h2>Why Work With Me.</h2>
 
-                <p>
-                    I bring hands-on experience, attention to detail,
-                    and a practical approach to SEO and content support.
-                </p>
-
             </div>
 
 
@@ -1297,11 +1587,16 @@
 
                 <div class="why-card reveal">
 
-                    <h3>SEO-Focused</h3>
+                    <div class="service-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Time Zone Advantage
+                    </h3>
 
                     <p>
-                        I understand the importance of keywords,
-                        structure, search intent, and on-page elements.
+                        I'm based in the Philippines (PHT, UTC+8), which means my working hours naturally overlap with US Eastern mornings, US Pacific evenings, and UK afternoons. Work keeps moving on your content and SEO tasks even while you're offline.
                     </p>
 
                 </div>
@@ -1309,11 +1604,16 @@
 
                 <div class="why-card reveal delay-1">
 
-                    <h3>Detail-Oriented</h3>
+                    <div class="service-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Precise Editing & Quality Control
+                    </h3>
 
                     <p>
-                        I pay attention to formatting, consistency,
-                        accuracy, and the small details that matter.
+                        I know how to use AI tools like ChatGPT and SurgeGraph efficiently for content drafting, then apply careful proofreading and editing to make sure the final copy is accurate, natural, and doesn't read as AI-generated. That combination, fast drafting plus a sharp editorial eye, is what actually matters for content and CMS work at volume.
                     </p>
 
                 </div>
@@ -1321,41 +1621,19 @@
 
                 <div class="why-card reveal delay-2">
 
-                    <h3>Comfortable With Volume</h3>
+                    <div class="service-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Hands-On Experience Across Two Skill Sets
+                    </h3>
 
                     <p>
-                        I've worked on high-volume publishing projects
-                        while keeping accuracy and consistency in check.
+                        I've built real, hands-on experience in both on-page SEO execution and high-volume CMS content management, not just one or the other. I pick up new systems quickly (a month of training was enough to get me fully independent on CMS work), and when something's unclear, I ask rather than guess, which matters for accuracy-critical work like managing 500+ listings a month.
                     </p>
 
                 </div>
-
-
-                <div class="why-card reveal delay-3">
-
-                    <h3>Hands-On Experience</h3>
-
-                    <p>
-                        My experience comes from actually writing,
-                        optimizing, organizing, and publishing content.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="value-box reveal">
-
-                <h3>
-                    Work That Adds Real Value.
-                </h3>
-
-                <p>
-                    You get thoughtful, detail-checked SEO and content
-                    support designed to keep your workflow organized,
-                    consistent, and moving forward.
-                </p>
 
             </div>
 
@@ -1365,7 +1643,7 @@
 
 
     <!-- =========================
-         CONTACT
+         WORK WITH ME
     ========================== -->
 
     <section id="contact">
@@ -1373,30 +1651,49 @@
         <div class="contact-box reveal">
 
             <h2>
-                Let's Work Together.
+                Work with me
             </h2>
 
-            <p>
-                Need help with SEO content, keyword research,
-                on-page optimization, or WordPress publishing?
-                I'd love to hear about your project.
-            </p>
 
-            <a
-                href="mailto:yanacharyldelin@gmail.com"
-                class="email"
-            >
-                yanacharyldelin@gmail.com
-            </a>
+            <div class="contact-details">
 
-            <br>
+                <p>
+                    <strong>Email</strong>
+                </p>
 
-            <a
-                href="mailto:yanacharyldelin@gmail.com"
-                class="button primary"
-            >
-                Get In Touch
-            </a>
+                <a
+                    href="mailto:yanacharyldelin@gmail.com"
+                    class="email"
+                >
+                    yanacharyldelin@gmail.com
+                </a>
+
+
+                <p>
+                    <strong>LinkedIn</strong>
+                </p>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    class="project-link"
+                >
+                    Yana on LinkedIn
+                </a>
+
+
+                <p>
+                    <strong>Phone</strong>
+                </p>
+
+                <a
+                    href="tel:+639174803967"
+                    class="project-link"
+                >
+                    +63 917 480 3967
+                </a>
+
+            </div>
 
         </div>
 
@@ -1415,7 +1712,7 @@
 
 
     <!-- =========================
-         SCROLL REVEAL SCRIPT
+         SCROLL REVEAL
     ========================== -->
 
     <script>
@@ -1433,15 +1730,8 @@
 
                             entry.target.classList.add('visible');
 
-                            /*
-                             * Stop observing after the element
-                             * becomes visible.
-                             *
-                             * This means the animation happens once
-                             * and the element stays visible permanently.
-                             */
-
                             observer.unobserve(entry.target);
+
                         }
 
                     });
