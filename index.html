@@ -1654,3 +1654,75 @@
 </div>
 
 </section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+    <div class="container">
+        © 2026 Yana Charyl Bito · SEO & Content Specialist
+    </div>
+</footer>
+
+<!-- =========================
+     REVEAL ANIMATION
+========================= -->
+
+<script>
+
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealElement = (element) => {
+        if (!element.classList.contains('visible')) {
+            element.classList.add('visible');
+        }
+    };
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    revealElement(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    revealElements.forEach((element) => {
+        observer.observe(element);
+    });
+
+    const revealVisibleElements = () => {
+
+        revealElements.forEach((element) => {
+
+            if (element.classList.contains('visible')) {
+                return;
+            }
+
+            const rect = element.getBoundingClientRect();
+
+            if (
+                rect.top < window.innerHeight &&
+                rect.bottom > 0
+            ) {
+                revealElement(element);
+                observer.unobserve(element);
+            }
+
+        });
+
+    };
+
+    window.addEventListener('load', revealVisibleElements);
+    window.addEventListener('pageshow', revealVisibleElements);
+
+</script>
+
+</body>
+</html>
