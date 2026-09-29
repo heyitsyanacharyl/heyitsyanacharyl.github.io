@@ -1,2238 +1,1732 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yana Charyl | SEO & Content Specialist</title>
+```
+<title>Yana Charyl | SEO & Content Specialist</title>
+<meta name="description" content="Yana Charyl is an SEO & Content Specialist focused on keyword research, on-page SEO, content optimization, WordPress publishing, and high-volume CMS content management.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+    :root {
+        --butter-yellow: #FFE497;
+        --mercury: #BEC7B9;
+        --mellow-rose: #D5A4A3;
+        --almost-apricot: #EEB1A2;
+        --jaffa-orange: #D16D3B;
+        --white: #FFFFFF;
+        --dark: #3B332D;
+        --light: #FFF9F2;
+        --muted: #6E6259;
+    }
 
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-    <style>
+    html {
+        scroll-behavior: smooth;
+    }
 
-        :root {
+    body {
+        font-family: 'Lora', serif;
+        background: var(--light);
+        color: var(--dark);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
 
-            --butter-yellow: #FFE497;
+    h1,
+    h2,
+    h3,
+    h4,
+    nav,
+    button,
+    .button,
+    .number,
+    .eyebrow {
+        font-family: 'Baloo 2', sans-serif;
+    }
 
-            --mercury: #BEC7B9;
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: var(--dark);
+    }
 
-            --mellow-rose: #D5A4A3;
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 
-            --almost-apricot: #EEB1A2;
+    img {
+        max-width: 100%;
+        display: block;
+    }
 
-            --jaffa-orange: #D16D3B;
+    .container {
+        width: min(1180px, 90%);
+        margin: 0 auto;
+    }
 
-            --white: #FFFFFF;
+    /* =========================
+       NAVIGATION
+    ========================= */
 
-            --dark: #3B332D;
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 249, 242, 0.96);
+        backdrop-filter: blur(12px);
+        border-bottom: 2px solid var(--dark);
+    }
 
-            --light: #FFF9F2;
+    .nav-container {
+        width: min(1180px, 90%);
+        margin: 0 auto;
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
 
-        }
+    .logo {
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: var(--jaffa-orange);
+        white-space: nowrap;
+    }
 
-        * {
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        list-style: none;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
 
-            margin: 0;
+    .nav-links a {
+        font-size: 0.92rem;
+        font-weight: 600;
+        transition: color 0.25s ease;
+    }
 
-            padding: 0;
+    .nav-links a:hover {
+        color: var(--jaffa-orange);
+    }
 
-            box-sizing: border-box;
+    /* =========================
+       GENERAL
+    ========================= */
 
-        }
+    section {
+        padding: 100px 0;
+        scroll-margin-top: 80px;
+    }
 
-        html {
+    .section-heading {
+        margin-bottom: 48px;
+    }
 
-            scroll-behavior: smooth;
+    .section-heading h2 {
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        line-height: 0.95;
+        margin-bottom: 14px;
+    }
 
-        }
+    .section-heading p {
+        max-width: 700px;
+        font-size: 1.05rem;
+    }
 
-        body {
+    .eyebrow {
+        display: inline-block;
+        margin-bottom: 14px;
+        color: var(--jaffa-orange);
+        font-size: 0.95rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
 
-            font-family: 'Lora', serif;
+    .muted {
+        color: var(--muted);
+    }
 
-            background: var(--light);
+    /* =========================
+       REVEAL ANIMATION
+    ========================= */
 
-            color: var(--dark);
+    .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+    }
 
-            line-height: 1.7;
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition:
+            opacity 0.7s ease,
+            transform 0.7s ease;
+    }
 
-        }
+    /* =========================
+       HOME
+    ========================= */
 
-        h1,
+    #home {
+        min-height: calc(100vh - 76px);
+        display: flex;
+        align-items: center;
+        background: var(--light);
+        padding: 90px 0;
+    }
 
-        h2,
+    .home-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        align-items: center;
+        gap: 70px;
+    }
 
-        h3,
+    .home-text h1 {
+        font-size: clamp(3.6rem, 8vw, 6.6rem);
+        line-height: 0.86;
+        margin-bottom: 25px;
+        color: var(--jaffa-orange);
+    }
 
-        h4,
+    .home-text h2 {
+        font-size: clamp(1.45rem, 3vw, 2.25rem);
+        line-height: 1.12;
+        margin-bottom: 24px;
+    }
 
-        nav,
+    .home-text .intro {
+        font-size: 1.12rem;
+        max-width: 650px;
+        margin-bottom: 30px;
+    }
 
-        button {
+    .home-buttons {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 34px;
+    }
 
-            font-family: 'Baloo 2', sans-serif;
+    .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 21px;
+        border-radius: 15px;
+        font-weight: 600;
+        border: 2px solid var(--dark);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-        }
+    .button:hover {
+        transform: translateY(-3px);
+    }
 
-        a {
+    .button-primary {
+        background: var(--jaffa-orange);
+        color: var(--white);
+    }
 
-            color: inherit;
+    .button-secondary {
+        background: var(--white);
+        color: var(--dark);
+    }
 
-            text-decoration: none;
+    .home-info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
 
-        }
+    .info-box {
+        padding: 17px;
+        background: var(--white);
+        border: 2px solid var(--dark);
+        border-radius: 18px;
+    }
 
-        img {
+    .info-box strong {
+        display: block;
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 0.88rem;
+        margin-bottom: 3px;
+    }
 
-            max-width: 100%;
+    .info-box span {
+        font-size: 0.78rem;
+    }
 
-            display: block;
+    .home-image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
 
-        }
+    .home-image::before {
+        content: "";
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        background: var(--butter-yellow);
+        border-radius: 50%;
+        top: -25px;
+        right: -20px;
+        z-index: 0;
+    }
 
-        .container {
+    .home-image img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 540px;
+        height: 500px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 30px;
+        border: 8px solid var(--white);
+        box-shadow: 15px 15px 0 var(--jaffa-orange);
+    }
 
-            width: min(1180px, 90%);
+    /* =========================
+       ABOUT
+    ========================= */
 
-            margin: 0 auto;
+    #about {
+        background: var(--butter-yellow);
+    }
 
-        }
+    .about-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 70px;
+        align-items: center;
+    }
 
-        /* NAVIGATION */
+    .about-image img {
+        width: 100%;
+        border-radius: 28px;
+        border: 8px solid var(--white);
+        box-shadow: 14px 14px 0 var(--mercury);
+    }
 
-        nav {
+    .about-text p {
+        font-size: 1.06rem;
+        margin-bottom: 20px;
+    }
 
-            position: sticky;
+    .about-highlight {
+        margin-top: 28px;
+        padding: 22px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 2px solid var(--dark);
+        border-radius: 20px;
+    }
 
-            top: 0;
+    .about-highlight strong {
+        display: block;
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 1.15rem;
+        margin-bottom: 5px;
+    }
 
-            z-index: 1000;
+    /* =========================
+       WHAT I DELIVER
+    ========================= */
 
-            background: rgba(255, 249, 242, 0.95);
+    #deliver {
+        background: var(--light);
+    }
 
-            backdrop-filter: blur(10px);
+    .deliver-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
 
-            border-bottom: 2px solid var(--dark);
+    .deliver-card {
+        background: var(--white);
+        border: 2px solid var(--dark);
+        border-radius: 25px;
+        padding: 30px;
+        position: relative;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
 
-        }
+    .deliver-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 10px 10px 0 var(--almost-apricot);
+    }
 
+    .number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: var(--jaffa-orange);
+        color: var(--white);
+        font-weight: 700;
+        margin-bottom: 18px;
+    }
+
+    .deliver-card h3 {
+        font-size: 1.45rem;
+        line-height: 1.12;
+        margin-bottom: 12px;
+    }
+
+    /* =========================
+       TOOLS
+    ========================= */
+
+    #tools {
+        background: var(--mercury);
+    }
+
+    .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
+
+    .tool-card {
+        background: var(--white);
+        border: 2px solid var(--dark);
+        border-radius: 22px;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .tool-card:hover {
+        transform: translateY(-5px) rotate(-1deg);
+        box-shadow: 7px 7px 0 var(--almost-apricot);
+    }
+
+    .tool-card img {
+        width: 82px;
+        height: 82px;
+        object-fit: cover;
+        margin-bottom: 13px;
+        border-radius: 17px;
+    }
+
+    .tool-card span {
+        font-family: 'Baloo 2', sans-serif;
+        font-weight: 600;
+        font-size: 0.98rem;
+    }
+
+    /* =========================
+       WORKFLOW
+    ========================= */
+
+    #how {
+        background: var(--mellow-rose);
+    }
+
+    .steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
+
+    .step {
+        background: var(--white);
+        border: 2px solid var(--dark);
+        border-radius: 24px;
+        padding: 26px;
+    }
+
+    .step-number {
+        color: var(--jaffa-orange);
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .step h3 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    /* =========================
+       PROOF OF WORK
+    ========================= */
+
+    #proof {
+        background: var(--light);
+    }
+
+    .proof-intro {
+        max-width: 720px;
+        margin-bottom: 55px;
+        font-size: 1.05rem;
+    }
+
+    .project {
+        margin-bottom: 75px;
+    }
+
+    .project:last-child {
+        margin-bottom: 0;
+    }
+
+    .project h3 {
+        font-size: clamp(1.7rem, 3vw, 2.35rem);
+        line-height: 1.1;
+        margin-bottom: 28px;
+    }
+
+    .project-image {
+        width: 100%;
+        margin-bottom: 28px;
+    }
+
+    .project-featured .project-image img {
+        width: 100%;
+        max-height: 620px;
+        object-fit: contain;
+        border-radius: 22px;
+        border: 6px solid var(--butter-yellow);
+        background: var(--white);
+    }
+
+    .project-description,
+    .project-standard {
+        background: var(--white);
+        border: 2px solid var(--dark);
+        border-radius: 28px;
+        padding: 38px;
+    }
+
+    .project h4 {
+        font-size: 1.25rem;
+        margin: 22px 0 8px;
+    }
+
+    .project-description h4:first-child,
+    .project-standard h4:first-child {
+        margin-top: 0;
+    }
+
+    .project p {
+        margin-bottom: 14px;
+    }
+
+    .project ul {
+        margin: 0 0 20px 22px;
+    }
+
+    .project li {
+        margin-bottom: 8px;
+    }
+
+    .project-link {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 12px 18px;
+        border-radius: 14px;
+        background: var(--jaffa-orange);
+        color: var(--white);
+        font-family: 'Baloo 2', sans-serif;
+        font-weight: 600;
+        transition: transform 0.2s ease;
+    }
+
+    .project-link:hover {
+        transform: translateY(-3px);
+    }
+
+    .prosple-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+        margin-bottom: 28px;
+    }
+
+    .prosple-gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 22px;
+        border: 6px solid var(--almost-apricot);
+    }
+
+    .project-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-bottom: 25px;
+    }
+
+    .tag {
+        padding: 7px 12px;
+        background: var(--butter-yellow);
+        border: 1.5px solid var(--dark);
+        border-radius: 999px;
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+    }
+
+    .document-links {
+        display: grid;
+        gap: 14px;
+        margin-top: 28px;
+    }
+
+    .document-link {
+        padding: 18px;
+        border-radius: 18px;
+        background: var(--butter-yellow);
+        border: 2px solid var(--dark);
+        transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .document-link:hover {
+        transform: translateX(5px);
+        background: var(--almost-apricot);
+    }
+
+    .document-link strong {
+        display: block;
+        font-family: 'Baloo 2', sans-serif;
+        font-size: 1.05rem;
+    }
+
+    .document-link span {
+        font-size: 0.88rem;
+    }
+
+    /* =========================
+       WHY WORK WITH ME
+    ========================= */
+
+    #why {
+        background: var(--almost-apricot);
+    }
+
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .why-card {
+        background: var(--white);
+        border: 2px solid var(--dark);
+        border-radius: 24px;
+        padding: 28px;
+    }
+
+    .why-card .number {
+        background: var(--mercury);
+        color: var(--dark);
+    }
+
+    .why-card h3 {
+        font-size: 1.35rem;
+        margin-bottom: 12px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    #contact {
+        background: var(--jaffa-orange);
+        color: var(--white);
+        text-align: center;
+    }
+
+    #contact .section-heading {
+        margin-bottom: 30px;
+    }
+
+    #contact .section-heading h2 {
+        color: var(--white);
+    }
+
+    .contact-text {
+        max-width: 700px;
+        margin: 0 auto 35px;
+        font-size: 1.1rem;
+    }
+
+    .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .contact-link {
+        background: var(--white);
+        color: var(--dark);
+        padding: 14px 22px;
+        border-radius: 16px;
+        font-family: 'Baloo 2', sans-serif;
+        font-weight: 600;
+        transition: transform 0.2s ease;
+    }
+
+    .contact-link:hover {
+        transform: translateY(-4px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        padding: 25px 0;
+        background: var(--dark);
+        color: var(--white);
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1000px) {
         .nav-container {
-
-            width: min(1180px, 90%);
-
-            margin: 0 auto;
-
-            min-height: 76px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            gap: 30px;
-
-        }
-
-        .logo {
-
-            font-size: 1.6rem;
-
-            font-weight: 700;
-
-            color: var(--jaffa-orange);
-
+            flex-direction: column;
+            padding: 15px 0;
         }
 
         .nav-links {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 24px;
-
-            list-style: none;
-
-            flex-wrap: wrap;
-
-            justify-content: flex-end;
-
+            justify-content: center;
         }
 
-        .nav-links a {
-
-            font-size: 0.95rem;
-
-            font-weight: 600;
-
-            transition: color 0.25s ease;
-
+        .home-grid,
+        .about-grid {
+            grid-template-columns: 1fr;
         }
 
-        .nav-links a:hover {
-
-            color: var(--jaffa-orange);
-
-        }
-
-        /* GENERAL */
-
-        section {
-
-            padding: 100px 0;
-
-            scroll-margin-top: 80px;
-
-        }
-
-        .section-heading {
-
-            margin-bottom: 50px;
-
-        }
-
-        .section-heading h2 {
-
-            font-size: clamp(2.3rem, 5vw, 4rem);
-
-            line-height: 1;
-
-            margin-bottom: 14px;
-
-        }
-
-        .section-heading p {
-
-            max-width: 680px;
-
-            font-size: 1.05rem;
-
-        }
-
-        /* REVEAL ANIMATION */
-
-        .reveal {
-
-            opacity: 0;
-
-            transform: translateY(30px);
-
-        }
-
-        .reveal.visible {
-
-            opacity: 1;
-
-            transform: translateY(0);
-
-            transition:
-
-                opacity 0.7s ease,
-
-                transform 0.7s ease;
-
-        }
-
-        /* HOME */
-
-        #home {
-
-            min-height: calc(100vh - 76px);
-
-            display: flex;
-
-            align-items: center;
-
-            background: var(--light);
-
-        }
-
-        .home-grid {
-
-            display: grid;
-
-            grid-template-columns: 1.05fr 0.95fr;
-
-            align-items: center;
-
-            gap: 70px;
-
-        }
-
-        .home-text h1 {
-
-            font-size: clamp(3.5rem, 8vw, 6.5rem);
-
-            line-height: 0.9;
-
-            margin-bottom: 25px;
-
-            color: var(--jaffa-orange);
-
-        }
-
-        .home-text h2 {
-
-            font-size: clamp(1.5rem, 3vw, 2.4rem);
-
-            line-height: 1.1;
-
-            margin-bottom: 25px;
-
+        .home-text {
+            text-align: center;
         }
 
         .home-text .intro {
-
-            font-size: 1.15rem;
-
-            max-width: 620px;
-
-            margin-bottom: 30px;
-
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .home-info {
-
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 15px;
-
-            margin-top: 30px;
-
-        }
-
-        .info-box {
-
-            padding: 18px;
-
-            background: var(--white);
-
-            border: 2px solid var(--dark);
-
-            border-radius: 18px;
-
-        }
-
-        .info-box strong {
-
-            display: block;
-
-            font-family: 'Baloo 2', sans-serif;
-
-            font-size: 0.9rem;
-
-            margin-bottom: 4px;
-
-        }
-
-        .info-box span {
-
-            font-size: 0.82rem;
-
-        }
-
-        .home-image {
-
-            position: relative;
-
-            display: flex;
-
+        .home-buttons {
             justify-content: center;
-
         }
 
         .home-image img {
-
-            width: 100%;
-
-            max-width: 540px;
-
-            height: 500px;
-
-            object-fit: cover;
-
-            object-position: center;
-
-            border-radius: 30px;
-
-            border: 8px solid var(--white);
-
-            box-shadow: 15px 15px 0 var(--jaffa-orange);
-
-        }
-
-        /* ABOUT */
-
-        #about {
-
-            background: var(--butter-yellow);
-
-        }
-
-        .about-grid {
-
-            display: grid;
-
-            grid-template-columns: 0.85fr 1.15fr;
-
-            gap: 70px;
-
-            align-items: center;
-
-        }
-
-        .about-image img {
-
-            width: 100%;
-
-            border-radius: 28px;
-
-            border: 8px solid var(--white);
-
-            box-shadow: 14px 14px 0 var(--mercury);
-
-        }
-
-        .about-text p {
-
-            font-size: 1.08rem;
-
-            margin-bottom: 20px;
-
-        }
-
-        /* WHAT I DELIVER */
-
-        #deliver {
-
-            background: var(--light);
-
-        }
-
-        .deliver-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 24px;
-
-        }
-
-        .deliver-card {
-
-            background: var(--white);
-
-            border: 2px solid var(--dark);
-
-            border-radius: 25px;
-
-            padding: 30px;
-
-            position: relative;
-
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-
-        }
-
-        .deliver-card:hover {
-
-            transform: translateY(-6px);
-
-            box-shadow: 10px 10px 0 var(--almost-apricot);
-
-        }
-
-        .number {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            width: 46px;
-
-            height: 46px;
-
-            border-radius: 50%;
-
-            background: var(--jaffa-orange);
-
-            color: var(--white);
-
-            font-family: 'Baloo 2', sans-serif;
-
-            font-weight: 700;
-
-            margin-bottom: 18px;
-
-        }
-
-        .deliver-card h3 {
-
-            font-size: 1.5rem;
-
-            line-height: 1.1;
-
-            margin-bottom: 12px;
-
-        }
-
-        /* TOOLS */
-
-        #tools {
-
-            background: var(--mercury);
-
+            max-width: 600px;
+            height: 480px;
+            margin: 0 auto;
         }
 
         .tools-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 18px;
-
-        }
-
-        .tool-card {
-
-            background: var(--white);
-
-            border: 2px solid var(--dark);
-
-            border-radius: 22px;
-
-            padding: 22px;
-
-            text-align: center;
-            
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
-
-            transition: transform 0.25s ease;
-
-        }
-
-        .tool-card:hover {
-
-            transform: translateY(-5px) rotate(-1deg);
-
-        }
-
-        .tool-card img {
-
-            width: 90px;
-
-            height: 90px;
-
-            object-fit: cover;
-
-            margin: 0 0 14px;
-
-            border-radius: 18px;
-
-        }
-
-        .tool-card span {
-
-            font-family: 'Baloo 2', sans-serif;
-
-            font-weight: 600;
-
-            font-size: 1rem;
-
-        }
-
-        /* HOW WE'LL WORK */
-
-        #how {
-
-            background: var(--mellow-rose);
-
-        }
-
-        .method-title {
-
-            font-size: clamp(2rem, 4vw, 3rem);
-
-            margin-bottom: 35px;
-
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .steps {
-
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 18px;
-
-        }
-
-        .step {
-
-            background: var(--white);
-
-            border: 2px solid var(--dark);
-
-            border-radius: 24px;
-
-            padding: 26px;
-
-        }
-
-        .step-number {
-
-            color: var(--jaffa-orange);
-
-            font-family: 'Baloo 2', sans-serif;
-
-            font-size: 2rem;
-
-            font-weight: 700;
-
-        }
-
-        .step h3 {
-
-            font-size: 1.45rem;
-
-            margin-bottom: 12px;
-
-        }
-
-        /* PROOF OF WORK */
-
-        #proof {
-
-            background: var(--light);
-
-        }
-
-        .project {
-
-            margin-bottom: 70px;
-
-        }
-
-        .project h3 {
-
-            font-size: clamp(1.7rem, 3vw, 2.4rem);
-
-            line-height: 1.1;
-
-            margin-bottom: 28px;
-
-        }
-
-        .project-featured .project-image {
-
-            width: 100%;
-
-            margin-bottom: 28px;
-
-        }
-
-        .project-featured .project-image img {
-
-            width: 100%;
-
-            height: auto;
-
-            max-height: 620px;
-
-            object-fit: contain;
-
-            border-radius: 22px;
-
-            border: 6px solid var(--butter-yellow);
-
-        }
-
-        .project-description {
-
-            background: var(--white);
-
-            border: 2px solid var(--dark);
-
-            border-radius: 28px;
-
-            padding: 38px;
-
-        }
-
-        .project h4 {
-
-            font-size: 1.3rem;
-
-            margin: 20px 0 8px;
-
-        }
-
-        .project-description h4:first-child {
-
-            margin-top: 0;
-
-        }
-
-        .project p {
-
-            margin-bottom: 14px;
-
-        }
-
-        .project ul {
-
-            margin: 0 0 20px 22px;
-
-        }
-
-        .project li {
-
-            margin-bottom: 8px;
-
-        }
-
-        .project-link {
-
-            display: inline-block;
-
-            margin-top: 10px;
-
-            padding: 12px 18px;
-
-            border-radius: 14px;
-
-            background: var(--jaffa-orange);
-
-            color: var(--white);
-
-            font-family: 'Baloo 2', sans-serif;
-
-            font-weight: 600;
-
-            transition: transform 0.2s ease;
-
-        }
-
-        .project-link:hover {
-
-            transform: translateY(-3px);
-
-        }
-
-        .project-gallery {
-
-            display: grid;
-
             grid-template-columns: repeat(2, 1fr);
-
-            gap: 18px;
-
-            margin-top: 25px;
-
-        }
-
-        .project-gallery img {
-
-            width: 100%;
-
-            border-radius: 20px;
-
-            border: 5px solid var(--almost-apricot);
-
-        }
-
-        .prosple-gallery {
-
-            display: grid;
-
-            grid-template-columns: 1fr;
-
-            gap: 22px;
-
-            margin-bottom: 28px;
-
-        }
-
-        .prosple-gallery img {
-
-            width: 100%;
-
-            height: auto;
-
-            border-radius: 22px;
-
-            border: 6px solid var(--almost-apricot);
-
-        }
-
-        /* THIRD PROJECT */
-
-        .project-standard {
-
-            background: var(--white);
-
-            border: 2px solid var(--dark);
-
-            border-radius: 30px;
-
-            padding: 38px;
-
-        }
-
-        .document-links {
-
-            display: grid;
-
-            gap: 14px;
-
-            margin-top: 25px;
-
-        }
-
-        .document-link {
-
-            padding: 18px;
-
-            border-radius: 18px;
-
-            background: var(--butter-yellow);
-
-            border: 2px solid var(--dark);
-
-            transition: transform 0.2s ease;
-
-        }
-
-        .document-link:hover {
-
-            transform: translateX(5px);
-
-        }
-
-        .document-link strong {
-
-            display: block;
-
-            font-family: 'Baloo 2', sans-serif;
-
-            font-size: 1.05rem;
-
-        }
-
-        .document-link span {
-
-            font-size: 0.9rem;
-
-        }
-
-        /* WHY WORK WITH ME */
-
-        #why {
-
-            background: var(--almost-apricot);
-
         }
 
         .why-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 20px;
-
+    @media (max-width: 650px) {
+        section {
+            padding: 75px 0;
         }
 
-        .why-card {
-
-            background: var(--white);
-
-            border: 2px solid var(--dark);
-
-            border-radius: 24px;
-
-            padding: 28px;
-
+        .container {
+            width: min(92%, 1180px);
         }
 
-        .why-card .number {
-
-            background: var(--mercury);
-
-            color: var(--dark);
-
+        .nav-links {
+            gap: 9px 14px;
         }
 
-        .why-card h3 {
-
-            font-size: 1.4rem;
-
-            margin-bottom: 12px;
-
+        .nav-links a {
+            font-size: 0.8rem;
         }
 
-        /* CONTACT */
-
-        #contact {
-
-            background: var(--jaffa-orange);
-
-            color: var(--white);
-
-            text-align: center;
-
+        .logo {
+            font-size: 1.3rem;
         }
 
-        #contact .section-heading {
-
-            margin-bottom: 35px;
-
+        .home-text h1 {
+            font-size: clamp(3.3rem, 16vw, 5rem);
         }
 
-        #contact .section-heading h2 {
-
-            color: var(--white);
-
+        .home-info,
+        .deliver-grid,
+        .tools-grid,
+        .steps,
+        .why-grid,
+        .prosple-gallery {
+            grid-template-columns: 1fr;
         }
 
-        .contact-text {
-
-            max-width: 700px;
-
-            margin: 0 auto 35px;
-
-            font-size: 1.1rem;
-
+        .home-image img {
+            height: 380px;
         }
 
-        .contact-links {
-
-            display: flex;
-
-            justify-content: center;
-
-            gap: 15px;
-
-            flex-wrap: wrap;
-
+        .project-description,
+        .project-standard {
+            padding: 24px;
         }
 
-        .contact-link {
-
-            background: var(--white);
-
-            color: var(--dark);
-
-            padding: 14px 22px;
-
-            border-radius: 16px;
-
-            font-family: 'Baloo 2', sans-serif;
-
-            font-weight: 600;
-
-            transition: transform 0.2s ease;
-
+        .project-featured .project-image img {
+            max-height: none;
         }
 
-        .contact-link:hover {
+        .document-link {
+            padding: 16px;
+        }
+    }
 
-            transform: translateY(-4px);
-
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
         }
 
-        /* RESPONSIVE */
-
-        @media (max-width: 900px) {
-
-            .nav-container {
-
-                flex-direction: column;
-
-                padding: 15px 0;
-
-            }
-
-            .nav-links {
-
-                justify-content: center;
-
-            }
-
-            .home-grid,
-
-            .about-grid {
-
-                grid-template-columns: 1fr;
-
-            }
-
-            .tools-grid {
-
-                grid-template-columns: repeat(3, 1fr);
-
-            }
-
-            .steps {
-
-                grid-template-columns: repeat(2, 1fr);
-
-            }
-
-            .why-grid {
-
-                grid-template-columns: repeat(2, 1fr);
-
-            }
-
-            .home-image img {
-
-                max-width: 600px;
-
-                height: 480px;
-
-                margin: 0 auto;
-
-            }
-
+        .reveal {
+            opacity: 1;
+            transform: none;
         }
 
-        @media (max-width: 650px) {
-
-            section {
-
-                padding: 75px 0;
-
-            }
-
-            .home-info {
-
-                grid-template-columns: 1fr;
-
-            }
-
-            .deliver-grid,
-
-            .tools-grid,
-
-            .steps,
-
-            .why-grid,
-
-            .project-gallery {
-
-                grid-template-columns: 1fr;
-
-            }
-
-            .project-description,
-
-            .project-standard {
-
-                padding: 24px;
-
-            }
-
-            .home-image img {
-
-                height: 380px;
-
-            }
-
-            .nav-links {
-
-                gap: 12px;
-
-            }
-
-            .nav-links a {
-
-                font-size: 0.82rem;
-
-            }
-
-            .project-featured .project-image img {
-
-                max-height: none;
-
-            }
-
+        .reveal.visible {
+            transition: none;
         }
 
-    </style>
+        .deliver-card,
+        .tool-card,
+        .project-link,
+        .document-link,
+        .contact-link,
+        .button {
+            transition: none;
+        }
+    }
+</style>
+```
 
 </head>
 
 <body>
 
-<nav>
+<!-- =========================
+     NAVIGATION
+========================= -->
 
+<nav>
     <div class="nav-container">
 
-        <a href="#home" class="logo">Yana Charyl Bito</a>
+```
+    <a href="#home" class="logo">Yana Charyl</a>
 
-        <ul class="nav-links">
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#deliver">Services</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#proof">Work</a></li>
+        <li><a href="#how">Workflow</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
-            <li><a href="#home">Home</a></li>
-
-            <li><a href="#about">About Me</a></li>
-
-            <li><a href="#deliver">What I Deliver</a></li>
-
-            <li><a href="#tools">Tools</a></li>
-
-            <li><a href="#how">How We'll Work</a></li>
-
-            <li><a href="#proof">Proof of Work</a></li>
-
-            <li><a href="#why">Why Work With Me</a></li>
-
-            <li><a href="#contact">Work With Me</a></li>
-
-        </ul>
-
-    </div>
+</div>
+```
 
 </nav>
 
-
-<!-- HOME -->
+<!-- =========================
+     HOME
+========================= -->
 
 <section id="home">
 
-    <div class="container home-grid">
+```
+<div class="container home-grid">
 
-        <div class="home-text reveal">
+    <div class="home-text reveal">
 
-            <h1>Hello! I'm Yana.</h1>
+        <span class="eyebrow">SEO & Content Specialist</span>
 
-            <h2>On-Page SEO &amp; WordPress Content Optimization</h2>
+        <h1>Hello! I'm Yana.</h1>
 
-            <p class="intro">
+        <h2>SEO content, on-page optimization & WordPress publishing.</h2>
 
-                I help local service businesses optimize their on-page SEO and WordPress content
+        <p class="intro">
+            I help businesses improve their online content through keyword research,
+            on-page SEO, content editing, and organized WordPress publishing.
+        </p>
 
-                so they can rank higher and reach more customers online.
+        <div class="home-buttons">
+            <a class="button button-primary" href="#proof">
+                View My Work
+            </a>
 
-            </p>
-
-            <div class="home-info">
-
-                <div class="info-box">
-
-                    <strong>Based in</strong>
-
-                    <span>Urdaneta City, Philippines</span>
-
-                </div>
-
-                <div class="info-box">
-
-                    <strong>Time zone</strong>
-
-                    <span>PHT (Philippine Time), UTC+8</span>
-
-                </div>
-
-                <div class="info-box">
-
-                    <strong>Availability</strong>
-
-                    <span>40+ hrs/week</span>
-
-                </div>
-
-            </div>
-
+            <a class="button button-secondary" href="#contact">
+                Let's Connect
+            </a>
         </div>
 
-        <div class="home-image reveal">
+        <div class="home-info">
 
-            <img
+            <div class="info-box">
+                <strong>Based in</strong>
+                <span>Philippines</span>
+            </div>
 
-                src="Photo.png"
+            <div class="info-box">
+                <strong>Time zone</strong>
+                <span>PHT · UTC+8</span>
+            </div>
 
-                alt="Yana Charyl Bito"
-
-            >
+            <div class="info-box">
+                <strong>Availability</strong>
+                <span>40+ hrs/week</span>
+            </div>
 
         </div>
 
     </div>
 
+    <div class="home-image reveal">
+
+        <img
+            src="Photo.png"
+            alt="Yana Charyl Bito"
+        >
+
+    </div>
+
+</div>
+```
+
 </section>
 
-
-<!-- ABOUT ME -->
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section id="about">
 
-    <div class="container about-grid">
+```
+<div class="container about-grid">
 
-        <div class="about-image reveal">
+    <div class="about-image reveal">
+
+        <img
+            src="a photo of me and my workspace.PNG"
+            alt="Yana working at her workspace"
+            loading="lazy"
+        >
+
+    </div>
+
+    <div class="about-text reveal">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">A little about me</span>
+
+            <h2>About Me.</h2>
+
+        </div>
+
+        <p>
+            I'm an SEO and content specialist with hands-on experience in keyword research,
+            on-page optimization, content editing, WordPress publishing, and CMS content management.
+        </p>
+
+        <p>
+            I started my SEO career as a virtual assistant, where I worked on optimized blog
+            content and the detailed on-page elements that help pages stay organized for both
+            readers and search engines.
+        </p>
+
+        <p>
+            I enjoy the execution side of SEO: researching keywords, improving content structure,
+            checking on-page details, building useful internal links, and making sure a finished
+            article is properly formatted and ready to publish.
+        </p>
+
+        <p>
+            I also have experience working with high-volume CMS content. In a previous role,
+            I managed hundreds of internship and graduate job listings each month, building
+            speed, consistency, and attention to detail along the way.
+        </p>
+
+        <div class="about-highlight">
+            <strong>My approach</strong>
+            <span>
+                I use AI tools to support research and drafting when appropriate, but every final
+                piece is reviewed, edited, and optimized before it is published.
+            </span>
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="deliver">
+
+```
+<div class="container">
+
+    <div class="section-heading reveal">
+
+        <span class="eyebrow">What I can help with</span>
+
+        <h2>What I Deliver.</h2>
+
+        <p>
+            Practical SEO and content support focused on the details that keep websites
+            organized, useful, and search-friendly.
+        </p>
+
+    </div>
+
+    <div class="deliver-grid">
+
+        <div class="deliver-card reveal">
+
+            <span class="number">01</span>
+
+            <h3>Keyword Research</h3>
+
+            <p>
+                Researching relevant search terms and using them to shape content topics,
+                page structure, and optimization priorities.
+            </p>
+
+        </div>
+
+        <div class="deliver-card reveal">
+
+            <span class="number">02</span>
+
+            <h3>On-Page SEO</h3>
+
+            <p>
+                Optimizing titles, headings, meta information, image alt text, URLs,
+                keyword placement, internal links, and other on-page elements.
+            </p>
+
+        </div>
+
+        <div class="deliver-card reveal">
+
+            <span class="number">03</span>
+
+            <h3>SEO Content Writing</h3>
+
+            <p>
+                Creating structured, readable blog content designed around search intent
+                while keeping the writing useful and natural for real readers.
+            </p>
+
+        </div>
+
+        <div class="deliver-card reveal">
+
+            <span class="number">04</span>
+
+            <h3>WordPress Publishing</h3>
+
+            <p>
+                Formatting and publishing optimized content in WordPress, including headings,
+                images, links, metadata, and final quality checks.
+            </p>
+
+        </div>
+
+        <div class="deliver-card reveal">
+
+            <span class="number">05</span>
+
+            <h3>Content Editing & QA</h3>
+
+            <p>
+                Reviewing content for clarity, accuracy, formatting, consistency, and
+                adherence to publishing requirements before it goes live.
+            </p>
+
+        </div>
+
+        <div class="deliver-card reveal">
+
+            <span class="number">06</span>
+
+            <h3>High-Volume CMS Content</h3>
+
+            <p>
+                Managing large volumes of structured content accurately and consistently,
+                including 500–600+ job listings in a monthly workflow.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     TOOLS
+========================= -->
+
+<section id="tools">
+
+```
+<div class="container">
+
+    <div class="section-heading reveal">
+
+        <span class="eyebrow">My working toolkit</span>
+
+        <h2>Tools I Work In.</h2>
+
+        <p>
+            A practical mix of SEO, CMS, project management, writing, and AI-assisted
+            content tools.
+        </p>
+
+    </div>
+
+    <div class="tools-grid">
+
+        <div class="tool-card reveal">
+            <img src="WordPress_logo_on_yellow_background_20260924134115.jpeg" alt="WordPress" loading="lazy">
+            <span>WordPress</span>
+        </div>
+
+        <div class="tool-card reveal">
+            <img src="Ahrefs_logo_on_solid_background_20260924134128.jpeg" alt="Ahrefs" loading="lazy">
+            <span>Ahrefs</span>
+        </div>
+
+        <div class="tool-card reveal">
+            <img src="SurgeGraph_logo_on_pink_background_20260924134437.jpeg" alt="SurgeGraph" loading="lazy">
+            <span>SurgeGraph</span>
+        </div>
+
+        <div class="tool-card reveal">
+            <img src="SEO_META_logo_on_background_20260924134137.jpeg" alt="SEO META in 1 CLICK" loading="lazy">
+            <span>SEO META in 1 CLICK</span>
+        </div>
+
+        <div class="tool-card reveal">
+            <img src="Drupal_CMS_logo_orange_background_20260924134215.jpeg" alt="Drupal CMS" loading="lazy">
+            <span>Drupal CMS</span>
+        </div>
+
+        <div class="tool-card reveal">
+            <img src="Trello_logo_on_yellow_background_20260924134221.jpeg" alt="Trello" loading="lazy">
+            <span>Trello</span>
+        </div>
+
+        <div class="tool-card reveal">
+            <img src="Airtable_logo_on_solid_background_20260924134218.jpeg" alt="Airtable" loading="lazy">
+            <span>Airtable</span>
+        </div>
+
+        <div class="tool-card reveal">
+            <img src="Google_Docs_logo_on_background_20260924134140.jpeg" alt="Google Docs" loading="lazy">
+            <span>Google Docs</span>
+        </div>
+
+        <div class="tool-card reveal">
+            <img src="Google_Sheets_logo_design_20260924134224.jpeg" alt="Google Sheets" loading="lazy">
+            <span>Google Sheets</span>
+        </div>
+
+        <div class="tool-card reveal">
+            <img src="ChatGPT_logo_on_orange_background_20260924134227.jpeg" alt="ChatGPT" loading="lazy">
+            <span>ChatGPT</span>
+        </div>
+
+        <div class="tool-card reveal">
+            <img src="Claude_logo_on_yellow_background_20260924134229.jpeg" alt="Claude" loading="lazy">
+            <span>Claude</span>
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     WORKFLOW
+========================= -->
+
+<section id="how">
+
+```
+<div class="container">
+
+    <div class="section-heading reveal">
+
+        <span class="eyebrow">From brief to publish</span>
+
+        <h2>My Workflow.</h2>
+
+        <p>
+            A straightforward process that keeps SEO and content work organized from
+            the initial brief through final delivery.
+        </p>
+
+    </div>
+
+    <div class="steps">
+
+        <div class="step reveal">
+
+            <span class="step-number">01</span>
+
+            <h3>Research</h3>
+
+            <p>
+                I review the brief, website, topic, search intent, and keyword targets
+                before starting the content or optimization work.
+            </p>
+
+        </div>
+
+        <div class="step reveal">
+
+            <span class="step-number">02</span>
+
+            <h3>Plan</h3>
+
+            <p>
+                I organize the required structure, keywords, headings, links, and
+                publishing requirements so the work has a clear checklist.
+            </p>
+
+        </div>
+
+        <div class="step reveal">
+
+            <span class="step-number">03</span>
+
+            <h3>Execute</h3>
+
+            <p>
+                I write, edit, optimize, format, and publish according to the agreed
+                specifications and content workflow.
+            </p>
+
+        </div>
+
+        <div class="step reveal">
+
+            <span class="step-number">04</span>
+
+            <h3>Review</h3>
+
+            <p>
+                Before delivery or publication, I check the finished work for accuracy,
+                formatting, links, SEO elements, and overall consistency.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- =========================
+     PROOF OF WORK
+========================= -->
+
+<section id="proof">
+
+```
+<div class="container">
+
+    <div class="section-heading reveal">
+
+        <span class="eyebrow">Selected experience</span>
+
+        <h2>Proof of Work.</h2>
+
+        <p class="proof-intro">
+            A few examples of the SEO, content, and CMS work I've handled.
+            Each project highlights a different part of my workflow and experience.
+        </p>
+
+    </div>
+
+
+    <!-- BIG EASY KITCHENS -->
+
+    <article class="project project-featured reveal">
+
+        <h3>
+            SEO content and WordPress publishing for Big Easy Kitchens.
+        </h3>
+
+        <div class="project-meta">
+            <span class="tag">Keyword Research</span>
+            <span class="tag">SEO Content</span>
+            <span class="tag">On-Page SEO</span>
+            <span class="tag">WordPress</span>
+            <span class="tag">Internal Linking</span>
+        </div>
+
+        <div class="project-image">
 
             <img
-
-                src="a photo of me and my workspace.PNG"
-
-                alt="Yana working at her workspace"
-
+                src="BEK- BLOG.png"
+                alt="Big Easy Kitchens SEO blog project"
+                loading="lazy"
             >
 
         </div>
 
-        <div class="about-text reveal">
+        <div class="project-description">
 
-            <div class="section-heading">
-
-                <h2>About Me.</h2>
-
-            </div>
+            <h4>Project</h4>
 
             <p>
-
-                I am an SEO Virtual Assistant who helps local service businesses rank higher and
-
-                reach more customers through optimized, on-page SEO and well-managed WordPress content.
-
+                I created an SEO-focused article around a kitchen renovation comparison topic,
+                targeting readers who were evaluating different renovation approaches.
             </p>
+
+            <h4>What I worked on</h4>
+
+            <ul>
+                <li>Researched and targeted relevant search terms around the topic.</li>
+                <li>Structured the article around the reader's search intent.</li>
+                <li>Drafted the content with AI assistance, then proofread and edited the final copy.</li>
+                <li>Improved internal linking between relevant content and service pages.</li>
+                <li>Optimized headings, metadata, and overall content structure.</li>
+                <li>Formatted and published the finished article in WordPress.</li>
+            </ul>
+
+            <h4>Delivery</h4>
 
             <p>
-
-                After a year working hands-on in SEO, keyword research, on-page optimization, and
-
-                content publishing, I found I genuinely enjoy the detail work: fixing the small
-
-                technical pieces that most people skip but that actually move a page up in search
-
-                results. That's why I've stayed focused on execution-level SEO and content management
-
-                rather than broad strategy.
-
+                The article went from assignment to live publication in under 24 hours,
+                with the final page structured and internally linked to relevant site content.
             </p>
+
+            <a
+                class="project-link"
+                href="https://www.bigeasykitchens.com/full-home-makeover-vs-partial-renovation-which-kitchen-improvement-strategy-is-right-for-you/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                View the live article →
+            </a>
+
+        </div>
+
+    </article>
+
+
+    <!-- PROSPLE LISTINGS -->
+
+    <article class="project project-featured reveal">
+
+        <h3>
+            High-volume CMS content management for Prosple.
+        </h3>
+
+        <div class="project-meta">
+            <span class="tag">CMS Publishing</span>
+            <span class="tag">Content Editing</span>
+            <span class="tag">Quality Control</span>
+            <span class="tag">Airtable</span>
+            <span class="tag">500–600+ Listings/Month</span>
+        </div>
+
+        <div class="prosple-gallery">
+
+            <img
+                src="first photo pros 1.png"
+                alt="Prosple CMS listing workflow"
+                loading="lazy"
+            >
+
+            <img
+                src="2nd photo pros.png"
+                alt="Prosple published job listing"
+                loading="lazy"
+            >
+
+        </div>
+
+        <div class="project-description">
+
+            <h4>Project</h4>
 
             <p>
+                I worked on a high-volume content workflow involving internship and
+                graduate job listings, where speed, consistency, and accuracy were
+                important across hundreds of records.
+            </p>
 
-                When you work with me, you get someone who follows specs precisely and delivers
+            <h4>What I worked on</h4>
 
-                optimized, publish-ready content on time. I'm also comfortable managing high volumes
+            <p>
+                I managed job listings through the CMS, including posting new roles,
+                checking employer and job details, applying consistent formatting,
+                and tracking assigned work through Airtable.
+            </p>
 
-                of work without losing accuracy. In a past role, I handled 500 to 600+ listings a
+            <h4>Volume</h4>
 
-                month without sacrificing accuracy.
+            <p>
+                The workflow regularly involved approximately 500–600+ listings per month,
+                with one tracked period reaching 688 listings.
+            </p>
 
+            <h4>What this experience developed</h4>
+
+            <p>
+                Working at this volume strengthened my ability to follow detailed
+                specifications, maintain consistency, spot errors, and move quickly
+                without treating accuracy as an afterthought.
             </p>
 
         </div>
 
-    </div>
-
-</section>
+    </article>
 
 
-<!-- WHAT I DELIVER -->
+    <!-- EMPLOYER PROFILES -->
 
-<section id="deliver">
+    <article class="project project-standard reveal">
 
-    <div class="container">
+        <h3>
+            Employer profile and job posting workflow for Prosple.
+        </h3>
 
-        <div class="section-heading reveal">
-
-            <h2>What I Deliver.</h2>
-
+        <div class="project-meta">
+            <span class="tag">CMS</span>
+            <span class="tag">Structured Content</span>
+            <span class="tag">Publishing</span>
+            <span class="tag">Quality Control</span>
         </div>
 
-        <div class="deliver-grid">
+        <div class="project-content">
 
-            <div class="deliver-card reveal">
+            <div>
 
-                <span class="number">01</span>
-
-                <h3>Pages that rank higher in search</h3>
+                <h4>Project</h4>
 
                 <p>
-
-                    On-page SEO fixes: meta titles, headers, alt text, and keyword placement,
-
-                    that help your content get found.
-
+                    Employer profiles formed an important part of the job publishing workflow,
+                    because listings needed to be associated with a published employer profile
+                    before going live.
                 </p>
 
-            </div>
-
-
-            <div class="deliver-card reveal">
-
-                <span class="number">02</span>
-
-                <h3>Content that's easy to read and structured to convert</h3>
-
-                <p>
-
-                    Blog posts and web pages written and formatted for both readers and search engines.
-
-                </p>
-
-            </div>
-
-
-            <div class="deliver-card reveal">
-
-                <span class="number">03</span>
-
-                <h3>A site that guides visitors to the right page</h3>
-
-                <p>
-
-                    Internal linking and schema markup that helps both users and search engines
-
-                    navigate your content.
-
-                </p>
-
-            </div>
-
-
-            <div class="deliver-card reveal">
-
-                <span class="number">04</span>
-
-                <h3>Blog content, published on schedule</h3>
-
-                <p>
-
-                    Consistent WordPress publishing, 8 to 12 optimized posts per month,
-
-                    delivered on time.
-
-                </p>
-
-            </div>
-
-
-            <div class="deliver-card reveal">
-
-                <span class="number">05</span>
-
-                <h3>Accurate, consistent listings at any volume</h3>
-
-                <p>
-
-                    High-volume CMS content managed with precision, up to 500 to 600+ listings
-
-                    a month without errors slipping through.
-
-                </p>
-
-            </div>
-
-
-            <div class="deliver-card reveal">
-
-                <span class="number">06</span>
-
-                <h3>Backlinks and guest posts that build authority</h3>
-
-                <p>
-
-                    Guest post uploads and backlink placement to strengthen your site's reach
-
-                    and credibility.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- TOOLS -->
-
-<section id="tools">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <h2>Tools I Work In.</h2>
-
-        </div>
-
-        <div class="tools-grid">
-
-            <div class="tool-card reveal">
-
-                <img src="WordPress_logo_on_yellow_background_20260924134115.jpeg" alt="WordPress">
-
-                <span>WordPress</span>
-
-            </div>
-
-            <div class="tool-card reveal">
-
-                <img src="Ahrefs_logo_on_solid_background_20260924134128.jpeg" alt="Ahrefs">
-
-                <span>Ahrefs</span>
-
-            </div>
-
-            <div class="tool-card reveal">
-
-                <img src="SurgeGraph_logo_on_pink_background_20260924134437.jpeg" alt="SurgeGraph">
-
-                <span>SurgeGraph</span>
-
-            </div>
-
-            <div class="tool-card reveal">
-
-                <img src="SEO_META_logo_on_background_20260924134137.jpeg" alt="SEO META in 1 CLICK">
-
-                <span>SEO META in 1 CLICK</span>
-
-            </div>
-
-            <div class="tool-card reveal">
-
-                <img src="Drupal_CMS_logo_orange_background_20260924134215.jpeg" alt="Drupal CMS">
-
-                <span>Drupal CMS</span>
-
-            </div>
-
-            <div class="tool-card reveal">
-
-                <img src="Trello_logo_on_yellow_background_20260924134221.jpeg" alt="Trello">
-
-                <span>Trello</span>
-
-            </div>
-
-            <div class="tool-card reveal">
-
-                <img src="Airtable_logo_on_solid_background_20260924134218.jpeg" alt="Airtable">
-
-                <span>Airtable</span>
-
-            </div>
-
-            <div class="tool-card reveal">
-
-                <img src="Google_Docs_logo_on_background_20260924134140.jpeg" alt="Google Docs">
-
-                <span>Google Docs</span>
-
-            </div>
-
-            <div class="tool-card reveal">
-
-                <img src="Google_Sheets_logo_design_20260924134224.jpeg" alt="Google Sheets">
-
-                <span>Google Sheets</span>
-
-            </div>
-
-            <div class="tool-card reveal">
-
-                <img src="ChatGPT_logo_on_orange_background_20260924134227.jpeg" alt="ChatGPT">
-
-                <span>ChatGPT</span>
-
-            </div>
-
-            <div class="tool-card reveal">
-
-                <img src="Claude_logo_on_yellow_background_20260924134229.jpeg" alt="Claude">
-
-                <span>Claude</span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- HOW WE'LL WORK -->
-
-<section id="how">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <h2>How We'll Work.</h2>
-
-            <p class="method-title">
-
-                The Clear Content Method
-
-            </p>
-
-        </div>
-
-        <div class="steps">
-
-            <div class="step reveal">
-
-                <span class="step-number">01</span>
-
-                <h3>Discovery</h3>
-
-                <p>
-
-                    We start with a quick call or written brief where you share your site,
-
-                    goals, and current SEO pain points. I review your existing content and
-
-                    identify where the biggest gaps are: outdated pages, weak rankings,
-
-                    or missing optimization.
-
-                </p>
-
-            </div>
-
-
-            <div class="step reveal">
-
-                <span class="step-number">02</span>
-
-                <h3>Setup</h3>
-
-                <p>
-
-                    In the first few days, I organize a task tracker in Trello or Airtable,
-
-                    confirm priority pages and keyword targets, and align on how often we'll
-
-                    check in. Everything is documented so nothing gets lost or repeated.
-
-                </p>
-
-            </div>
-
-
-            <div class="step reveal">
-
-                <span class="step-number">03</span>
-
-                <h3>Execution</h3>
-
-                <p>
-
-                    This is the ongoing work: writing, optimizing, and publishing content
-
-                    directly in WordPress on a consistent weekly schedule. I follow the
-
-                    agreed specs and checklist closely, so what you get matches what we planned.
-
-                </p>
-
-            </div>
-
-
-            <div class="step reveal">
-
-                <span class="step-number">04</span>
-
-                <h3>Reporting</h3>
-
-                <p>
-
-                    At the end of each week, I send a short update covering what was completed,
-
-                    what's scheduled next, and anything that needs your input, sent through
-
-                    email or whichever channel you prefer, like Slack or WhatsApp.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PROOF OF WORK -->
-
-<section id="proof">
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <h2>Proof of Work.</h2>
-
-        </div>
-
-
-        <!-- BIG EASY KITCHENS -->
-
-        <article class="project project-featured reveal">
-
-            <h3>
-
-                How I turned a common customer question into SEO-ready content for Big Easy Kitchens.
-
-            </h3>
-
-            <div class="project-image">
-
-                <img
-
-                    src="BEK- BLOG.png"
-
-                    alt="Big Easy Kitchens blog project"
-
-                >
-
-            </div>
-
-
-            <div class="project-description">
-
-                <h4>Problem</h4>
-
-                <p>
-
-                    Big Easy Kitchens needed content that could capture homeowners actively
-
-                    deciding between a full kitchen remodel and a partial renovation, a
-
-                    high-intent, comparison-style search topic people look up before they're
-
-                    ready to book a consultation. The goal was content that could rank for
-
-                    this decision-stage query while guiding readers naturally toward the brand's services.
-
-                </p>
-
-
-                <h4>Solution</h4>
+                <h4>What I worked on</h4>
 
                 <ul>
-
-                    <li>
-
-                        Researched and targeted high-intent keywords around kitchen renovation comparison searches
-
-                    </li>
-
-                    <li>
-
-                        Drafted the article with AI assistance, then proofread and edited it for accuracy and natural, non-AI-sounding copy
-
-                    </li>
-
-                    <li>
-
-                        Strengthened internal linking across Big Easy Kitchens' related service pages and sub-brand content
-
-                    </li>
-
-                    <li>
-
-                        Optimized on-page elements: headers, meta title, and content structure, for readability and search visibility
-
-                    </li>
-
-                    <li>
-
-                        Published directly in WordPress, formatted for skimmability with clear sections
-
-                    </li>
-
+                    <li>Created and published employer profiles in the CMS.</li>
+                    <li>Structured company information and descriptions according to platform requirements.</li>
+                    <li>Published job listings under the appropriate employer profiles.</li>
+                    <li>Checked employer and listing information before publication.</li>
+                    <li>Maintained consistent formatting across CMS and published pages.</li>
                 </ul>
 
-
-                <h4>Result</h4>
-
                 <p>
-
-                    The article went from assignment to live publication in under 24 hours,
-
-                    giving Big Easy Kitchens a new decision-stage entry point connected to
-
-                    their service pages through stronger internal linking, with no gap in
-
-                    their content coverage for this high-demand search topic.
-
+                    This workflow required careful attention to detail because an issue in
+                    the employer profile could affect the publishing process for associated listings.
                 </p>
 
+            </div>
+
+            <div class="document-links">
 
                 <a
-
-                    class="project-link"
-
-                    href="https://www.bigeasykitchens.com/full-home-makeover-vs-partial-renovation-which-kitchen-improvement-strategy-is-right-for-you/"
-
+                    class="document-link"
+                    href="Firmware Engineer Intern -CMS.pdf"
                     target="_blank"
-
                     rel="noopener noreferrer"
-
                 >
+                    <strong>Firmware Engineer Intern — CMS →</strong>
+                    <span>CMS formatting and structured input.</span>
+                </a>
 
-                    View the live article →
+                <a
+                    class="document-link"
+                    href="Firmware Engineer Intern-Frontend .pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <strong>Firmware Engineer Intern — Live View →</strong>
+                    <span>Final published layout.</span>
+                </a>
 
+                <a
+                    class="document-link"
+                    href="Parrish & Partners Employer Cms.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <strong>Parrish &amp; Partners — CMS Profile →</strong>
+                    <span>Employer profile setup and structured information.</span>
+                </a>
+
+                <a
+                    class="document-link"
+                    href="Parrish & Partners Internships & Entry-level Jobs.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <strong>Parrish &amp; Partners — Live Profile →</strong>
+                    <span>Final published employer profile.</span>
                 </a>
 
             </div>
 
-        </article>
+        </div>
 
+    </article>
 
-        <!-- PROSPLE LISTINGS -->
-
-        <article class="project project-featured reveal">
-
-            <h3>
-
-                How I helped Prosple maintain accuracy across 500–600+ monthly job listings — without sacrificing speed.
-
-            </h3>
-
-
-            <div class="prosple-gallery">
-
-                <img
-
-                    src="first photo pros 1.png"
-
-                    alt="Prosple CMS listing"
-
-                >
-
-                <img
-
-                    src="2nd photo pros.png"
-
-                    alt="Prosple job listing"
-
-                >
-
-            </div>
-
-
-            <div class="project-description">
-
-                <h4>Problem</h4>
-
-                <p>
-
-                    Prosple needed to post and maintain a high volume of internship and graduate
-
-                    job listings for US-based roles every month, a workload where accuracy and
-
-                    consistency easily slip when speed is also required. Manually tracking hundreds
-
-                    of listings without a structured system risks duplicate posts, outdated listings,
-
-                    and formatting errors that hurt applicant engagement.
-
-                </p>
-
-
-                <h4>Solution</h4>
-
-                <p>
-
-                    I managed the full listing workflow in the CMS: posting new roles, optimizing
-
-                    job descriptions using structured formatting guidelines, and tracking assigned
-
-                    tasks and progress in Airtable to avoid duplication or missed updates. I followed
-
-                    consistent formatting standards across every listing to keep the front-end display
-
-                    clean and readable at scale, checking employer names, job titles, and listing
-
-                    details for accuracy before publishing.
-
-                </p>
-
-
-                <h4>Result</h4>
-
-                <p>
-
-                    Filtered CMS records show sustained monthly volume in the 500 to 600+ range,
-
-                    with one tracked period reaching 688 listings, all managed and maintained without
-
-                    losing consistency across postings.
-
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- EMPLOYER PROFILE -->
-
-        <article class="project project-standard reveal">
-
-            <h3>
-
-                Job Posting &amp; Employer Profile Creation for Prosple.
-
-            </h3>
-
-
-            <div class="project-content">
-
-                <div>
-
-                    <h4>Problem</h4>
-
-                    <p>
-
-                        At Prosple, a job listing could only go live once the employer's profile was
-
-                        published. That meant getting the employer profile setup right came first,
-
-                        before any job could be posted under it.
-
-                    </p>
-
-
-                    <h4>Solution</h4>
-
-                    <ul>
-
-                        <li>
-
-                            Created and published new employer profiles in the CMS, structuring company details, descriptions, and formatting to match platform standards
-
-                        </li>
-
-                        <li>
-
-                            Reviewed and published job listings under those profiles, keeping formatting, structure, and detail consistent with each employer's information
-
-                        </li>
-
-                        <li>
-
-                            Checked employer details and listing content for accuracy before anything went live
-
-                        </li>
-
-                    </ul>
-
-
-                    <h4>Result</h4>
-
-                    <p>
-
-                        Since job listings depend on the employer profile going live first,
-
-                        getting the profile setup right the first time kept the whole posting
-
-                        process moving without delays.
-
-                    </p>
-
-                </div>
-
-
-                <div class="document-links">
-
-                    <a
-
-                        class="document-link"
-
-                        href="Firmware Engineer Intern -CMS.pdf"
-
-                        target="_blank"
-
-                    >
-
-                        <strong>Firmware Engineer Intern (CMS) →</strong>
-
-                        <span>Shows CMS formatting and structured input.</span>
-
-                    </a>
-
-
-                    <a
-
-                        class="document-link"
-
-                        href="Firmware Engineer Intern-Frontend .pdf"
-
-                        target="_blank"
-
-                    >
-
-                        <strong>Firmware Engineer Intern (live view) →</strong>
-
-                        <span>Shows the final published layout.</span>
-
-                    </a>
-
-
-                    <a
-
-                        class="document-link"
-
-                        href="Parrish & Partners Employer Cms.pdf"
-
-                        target="_blank"
-
-                    >
-
-                        <strong>Parrish &amp; Partners, Employer Profile (CMS version) →</strong>
-
-                        <span>Shows CMS formatting, structured input fields, and employer details setup.</span>
-
-                    </a>
-
-
-                    <a
-
-                        class="document-link"
-
-                        href="Parrish & Partners Internships & Entry-level Jobs.pdf"
-
-                        target="_blank"
-
-                    >
-
-                        <strong>Parrish &amp; Partners, Employer Profile (live view) →</strong>
-
-                        <span>Shows the final published employer profile layout visible to users.</span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
+</div>
+```
 
 </section>
 
-
-<!-- WHY WORK WITH ME -->
+<!-- =========================
+     WHY WORK WITH ME
+========================= -->
 
 <section id="why">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-heading reveal">
+    <div class="section-heading reveal">
 
-            <h2>Why Work With Me.</h2>
+        <span class="eyebrow">What I bring to a team</span>
+
+        <h2>Why Work With Me.</h2>
+
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card reveal">
+
+            <span class="number">01</span>
+
+            <h3>Detail-Oriented Execution</h3>
+
+            <p>
+                I enjoy the practical side of SEO: checking page elements, following
+                content requirements, reviewing details, and making sure work is
+                complete before it goes live.
+            </p>
 
         </div>
 
+        <div class="why-card reveal">
 
-        <div class="why-grid">
+            <span class="number">02</span>
 
-            <div class="why-card reveal">
+            <h3>Comfortable With Volume</h3>
 
-                <span class="number">01</span>
+            <p>
+                My CMS experience includes managing 500–600+ listings per month,
+                which taught me how to balance speed, consistency, and accuracy
+                across repetitive workflows.
+            </p>
 
-                <h3>Time Zone Advantage</h3>
+        </div>
 
-                <p>
+        <div class="why-card reveal">
 
-                    I'm based in the Philippines (PHT, UTC+8), which means my working hours
+            <span class="number">03</span>
 
-                    naturally overlap with US Eastern mornings, US Pacific evenings, and UK
+            <h3>SEO + Content in One Workflow</h3>
 
-                    afternoons. Work keeps moving on your content and SEO tasks even while
-
-                    you're offline.
-
-                </p>
-
-            </div>
-
-
-            <div class="why-card reveal">
-
-                <span class="number">02</span>
-
-                <h3>Precise Editing &amp; Quality Control</h3>
-
-                <p>
-
-                    I know how to use AI tools like ChatGPT and SurgeGraph efficiently for
-
-                    content drafting, then apply careful proofreading and editing to make sure
-
-                    the final copy is accurate, natural, and doesn't read as AI-generated.
-
-                    That combination, fast drafting plus a sharp editorial eye, is what actually
-
-                    matters for content and CMS work at volume.
-
-                </p>
-
-            </div>
-
-
-            <div class="why-card reveal">
-
-                <span class="number">03</span>
-
-                <h3>Hands-On Experience Across Two Skill Sets</h3>
-
-                <p>
-
-                    I've built real, hands-on experience in both on-page SEO execution and
-
-                    high-volume CMS content management, not just one or the other. I pick up
-
-                    new systems quickly (a month of training was enough to get me fully
-
-                    independent on CMS work), and when something's unclear, I ask rather
-
-                    than guess, which matters for accuracy-critical work like managing
-
-                    500+ listings a month.
-
-                </p>
-
-            </div>
+            <p>
+                I can move between keyword research, content editing, on-page
+                optimization, and WordPress publishing rather than treating each
+                step as a completely separate task.
+            </p>
 
         </div>
 
     </div>
 
+</div>
+```
+
 </section>
 
-
-<!-- WORK WITH ME -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section id="contact">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-heading reveal">
+    <div class="section-heading reveal">
 
-            <h2>Let's Work Together.</h2>
+        <span class="eyebrow">Have a project or role in mind?</span>
 
-        </div>
-
-
-        <p class="contact-text reveal">
-
-            Need help with SEO Content, Keyword Research, On-Page Optimization, or WordPress
-
-            Publishing? I'd love to hear about your project!
-
-        </p>
-
-
-        <div class="contact-links reveal">
-
-            <a
-
-                class="contact-link"
-
-                href="mailto:yanacharyldelin@gmail.com"
-
-            >
-
-                Email Me
-
-            </a>
-
-
-            <a
-
-                class="contact-link"
-
-                href="https://www.linkedin.com/in/yana-charyl-bito-b2284a372/"
-
-                target="_blank"
-
-                rel="noopener noreferrer"
-
-            >
-
-                Yana on LinkedIn
-
-            </a>
-
-
-            <a
-
-                class="contact-link"
-
-                href="tel:+639174803967"
-
-            >
-
-                +63 917 480 3967
-
-            </a>
-
-        </div>
+        <h2>Let's Work Together.</h2>
 
     </div>
 
+    <p class="contact-text reveal">
+        I'm open to remote opportunities involving SEO content, keyword research,
+        on-page optimization, WordPress publishing, content editing, and CMS work.
+    </p>
+
+    <div class="contact-links reveal">
+
+        <a
+            class="contact-link"
+            href="mailto:yanacharyldelin@gmail.com"
+        >
+            Email Me
+        </a>
+
+        <a
+            class="contact-link"
+            href="https://www.linkedin.com/in/yana-charyl-bito-b2284a372/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            LinkedIn
+        </a>
+
+        <a
+            class="contact-link"
+            href="tel:+639174803967"
+        >
+            +63 917 480 3967
+        </a>
+
+    </div>
+
+</div>
+```
+
 </section>
 
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+    <div class="container">
+        © 2026 Yana Charyl Bito · SEO & Content Specialist
+    </div>
+</footer>
+
+<!-- =========================
+     REVEAL ANIMATION
+========================= -->
 
 <script>
-
-    /*
-
-        REVEAL ANIMATION
-
-        Elements reveal when they enter the screen.
-
-        Once revealed:
-
-        - .visible is added
-
-        - the element is no longer observed
-
-        - the class is NEVER removed
-
-        - scrolling back up will NOT hide it
-
-    */
 
     const revealElements = document.querySelectorAll('.reveal');
 
     const revealElement = (element) => {
-
         if (!element.classList.contains('visible')) {
-
             element.classList.add('visible');
-
         }
-
     };
 
     const observer = new IntersectionObserver(
-
         (entries) => {
-
             entries.forEach((entry) => {
-
                 if (entry.isIntersecting) {
-
                     revealElement(entry.target);
-
-                    /*
-
-                        Stop watching this element completely.
-
-                        It will remain visible permanently.
-
-                    */
-
                     observer.unobserve(entry.target);
-
                 }
-
             });
-
         },
-
         {
-
             threshold: 0.12
-
         }
-
     );
 
-
     revealElements.forEach((element) => {
-
         observer.observe(element);
-
     });
-
-
-    /*
-
-        Immediately reveal anything that is already visible
-
-        when the page loads or when navigation jumps to it.
-
-    */
 
     const revealVisibleElements = () => {
 
         revealElements.forEach((element) => {
 
             if (element.classList.contains('visible')) {
-
                 return;
-
             }
 
             const rect = element.getBoundingClientRect();
 
             if (
-
                 rect.top < window.innerHeight &&
-
                 rect.bottom > 0
-
             ) {
-
                 revealElement(element);
-
                 observer.unobserve(element);
-
             }
 
         });
 
     };
 
-
     window.addEventListener('load', revealVisibleElements);
-
     window.addEventListener('pageshow', revealVisibleElements);
-
-    window.addEventListener('scroll', revealVisibleElements, {
-
-        passive: true
-
-    });
 
 </script>
 
 </body>
-
 </html>
