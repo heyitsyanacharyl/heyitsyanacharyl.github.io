@@ -1585,44 +1585,68 @@
 
 <section id="contact">
 
-<div class="container">
+<div class="container contact-grid">
 
-    <div class="section-heading reveal">
+    <div class="contact-intro reveal">
 
-        <span class="eyebrow">Have a project or role in mind?</span>
+        <span class="eyebrow">Let's Connect</span>
 
         <h2>Let's Work Together.</h2>
 
+        <p>
+            Have an SEO or content project in mind?
+            Let’s talk about how I can help.
+        </p>
+
+        <div class="contact-services">
+            <span>SEO Content</span>
+            <span>On-Page SEO</span>
+            <span>WordPress Publishing</span>
+        </div>
+
     </div>
 
-    <p class="contact-text reveal">
-        I'm open to remote opportunities involving SEO content, keyword research,
-        on-page optimization, WordPress publishing, content editing, and CMS work.
-    </p>
+    <div class="contact-card reveal">
 
-    <div class="contact-links reveal">
+        <div class="contact-item">
+
+            <span class="contact-label">EMAIL</span>
+
+            <a href="mailto:yanacharyldelin@gmail.com">
+                yanacharyldelin@gmail.com
+            </a>
+
+        </div>
+
+        <div class="contact-item">
+
+            <span class="contact-label">LINKEDIN</span>
+
+            <a
+                href="https://www.linkedin.com/in/yana-charyl-bito-b2284a372/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Connect with me on LinkedIn →
+            </a>
+
+        </div>
+
+        <div class="contact-item">
+
+            <span class="contact-label">PHONE</span>
+
+            <a href="tel:+639174803967">
+                +63 917 480 3967
+            </a>
+
+        </div>
 
         <a
-            class="contact-link"
             href="mailto:yanacharyldelin@gmail.com"
+            class="contact-button"
         >
-            Email Me
-        </a>
-
-        <a
-            class="contact-link"
-            href="https://www.linkedin.com/in/yana-charyl-bito-b2284a372/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            LinkedIn
-        </a>
-
-        <a
-            class="contact-link"
-            href="tel:+639174803967"
-        >
-            +63 917 480 3967
+            Send Me a Message →
         </a>
 
     </div>
@@ -1630,75 +1654,3 @@
 </div>
 
 </section>
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-    <div class="container">
-        © 2026 Yana Charyl Bito · SEO & Content Specialist
-    </div>
-</footer>
-
-<!-- =========================
-     REVEAL ANIMATION
-========================= -->
-
-<script>
-
-    const revealElements = document.querySelectorAll('.reveal');
-
-    const revealElement = (element) => {
-        if (!element.classList.contains('visible')) {
-            element.classList.add('visible');
-        }
-    };
-
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    revealElement(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-    revealElements.forEach((element) => {
-        observer.observe(element);
-    });
-
-    const revealVisibleElements = () => {
-
-        revealElements.forEach((element) => {
-
-            if (element.classList.contains('visible')) {
-                return;
-            }
-
-            const rect = element.getBoundingClientRect();
-
-            if (
-                rect.top < window.innerHeight &&
-                rect.bottom > 0
-            ) {
-                revealElement(element);
-                observer.unobserve(element);
-            }
-
-        });
-
-    };
-
-    window.addEventListener('load', revealVisibleElements);
-    window.addEventListener('pageshow', revealVisibleElements);
-
-</script>
-
-</body>
-</html>
